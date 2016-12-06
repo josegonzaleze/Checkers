@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="f8384a7b-eee2-4d5e-b797-5545bf4f76ef"
-    Publisher="CN=Alex21JMU"
+    Name="d5f0590b-6096-4efb-ba90-2a4729a8bc34"
+    Publisher="CN=Otmaro"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="f8384a7b-eee2-4d5e-b797-5545bf4f76ef" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="d5f0590b-6096-4efb-ba90-2a4729a8bc34" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CheckersUniversalApp</DisplayName>
-    <PublisherDisplayName>Alex21JMU</PublisherDisplayName>
+    <PublisherDisplayName>Otmaro</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
