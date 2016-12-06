@@ -8,6 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid HorizontalAlignment="Left" Height="427" Margin="368,150,0,0" VerticalAlignment="Top" Width="481">
+            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="10,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="154,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="262,207,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="371,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        </Grid>
 
     </Grid>
 </Page>
