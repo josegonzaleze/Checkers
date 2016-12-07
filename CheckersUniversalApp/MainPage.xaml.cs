@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -136,37 +137,37 @@ namespace CheckersUniversalApp
             Image redChecker = new Image();
             redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
 
-            //set up game "BLACK"
-            a1Picture.Source = blackChecker.Source;
-            c1Picture.Source = blackChecker.Source;
-            e1Picture.Source = blackChecker.Source;
-            g1Picture.Source = blackChecker.Source;
+            //set up game "RED"
+            a1Picture.Source = redChecker.Source;
+            c1Picture.Source = redChecker.Source;
+            e1Picture.Source = redChecker.Source;
+            g1Picture.Source = redChecker.Source;
 
-            b2Picture.Source = blackChecker.Source;
-            d2Picture.Source = blackChecker.Source;
-            f2Picture.Source = blackChecker.Source;
-            h2Picture.Source = blackChecker.Source;
+            b2Picture.Source = redChecker.Source;
+            d2Picture.Source = redChecker.Source;
+            f2Picture.Source = redChecker.Source;
+            h2Picture.Source = redChecker.Source;
 
-            a3Picture.Source = blackChecker.Source;
-            c3Picture.Source = blackChecker.Source;
-            e3Picture.Source = blackChecker.Source;
-            g3Picture.Source = blackChecker.Source;
+            a3Picture.Source = redChecker.Source;
+            c3Picture.Source = redChecker.Source;
+            e3Picture.Source = redChecker.Source;
+            g3Picture.Source = redChecker.Source;
 
-            //Set up game "RED"
-            b8Picture.Source = redChecker.Source;
-            d8Picture.Source = redChecker.Source;
-            f8Picture.Source = redChecker.Source;
-            h8Picture.Source = redChecker.Source;
+            //Set up game "BLACK"
+            b8Picture.Source = blackChecker.Source; 
+            d8Picture.Source = blackChecker.Source; 
+            f8Picture.Source = blackChecker.Source; 
+            h8Picture.Source = blackChecker.Source; 
 
-            a7Picture.Source = redChecker.Source;
-            c7Picture.Source = redChecker.Source;
-            e7Picture.Source = redChecker.Source;
-            g7Picture.Source = redChecker.Source;
+            a7Picture.Source = blackChecker.Source;
+            c7Picture.Source = blackChecker.Source;
+            e7Picture.Source = blackChecker.Source;
+            g7Picture.Source = blackChecker.Source;
 
-            b6Picture.Source = redChecker.Source;
-            d6Picture.Source = redChecker.Source;
-            f6Picture.Source = redChecker.Source;
-            h6Picture.Source = redChecker.Source;
+            b6Picture.Source = blackChecker.Source;
+            d6Picture.Source = blackChecker.Source;
+            f6Picture.Source = blackChecker.Source;
+            h6Picture.Source = blackChecker.Source;
 
         }
         private void button_Click(object sender, RoutedEventArgs e)
@@ -177,6 +178,293 @@ namespace CheckersUniversalApp
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             StartGame();
+        }
+
+        private void Selected_Checker(object sender, TappedRoutedEventArgs e)
+        {
+            SolidColorBrush brush1 = new SolidColorBrush(Colors.Pink);
+            
+        }
+        private void ChangeBackground(string str)
+        {
+
+            Rectangle rect = FindName(str) as Rectangle;
+            SolidColorBrush brushTemp = new SolidColorBrush(Colors.Pink);
+            rect.Fill = brushTemp;
+        }
+
+        private void CanMOve(string str)
+        {
+            // Right position
+            string letter = str.Substring(0, 1);
+            string number = str.Substring(1, 1);
+
+            letter = IncrementLetter(letter);
+            number = (Convert.ToInt32(number) + 1).ToString();
+
+            string ImageCode = letter + number + "Picture";
+            string RectCode = letter + number + "Tile";
+            Image img = FindName(ImageCode) as Image;
+            Rectangle rect = FindName(RectCode) as Rectangle;
+
+            Image blackChecker = new Image();
+            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+            Image redChecker = new Image();
+            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+            if (img.Source != redChecker.Source && img.Source != blackChecker.Source)
+            {
+               rect.Fill = new SolidColorBrush(Colors.Pink);
+            }
+        }
+        private string IncrementLetter(string str)
+        {
+            string NewLetter = "";
+
+            switch (str.ToLower())
+            {
+                case "a":
+                    NewLetter = "b";
+                    break;
+                case "b":
+                    NewLetter = "c";
+                    break;
+                case "c":
+                    NewLetter = "d";
+                    break;
+                case "d":
+                    NewLetter = "e";
+                    break;
+                case "e":
+                    NewLetter = "f";
+                    break;
+                case "f":
+                    NewLetter = "g";
+                    break;
+                case "g":
+                    NewLetter = "h";
+                    break;
+            }
+            return NewLetter;
+        }
+
+        //Listeners ------------------
+
+            //BOTTOM OF THE BOARD
+        private void a1Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0,2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+
+        }
+
+
+        private void b2Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void a3Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void c3Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void d2Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void e3Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void f2Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void g1Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void h2Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void c1Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void e1Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void g3Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void a7Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void b6Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void c7Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void b8Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+        private void d8Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMOve(rectangleName);
+        }
+
+
+        //TOP OF THE BOARD
+
+        private void f8Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            
+        }
+
+        private void h8Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            
+        }
+
+        private void g7Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+        }
+
+        private void e7Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+        }
+
+        private void h6Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+        }
+
+        private void f6Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+        }
+
+        private void d6Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
         }
     }
 }

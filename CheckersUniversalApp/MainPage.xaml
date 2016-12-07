@@ -79,28 +79,28 @@
             <Rectangle x:Name="g1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="594"/>
             <Rectangle x:Name="h1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="693"/>
             <Image x:Name="b1Picture" Height="72" Canvas.Top="554" Width="94" Canvas.Left="99"/>
-            <Image x:Name="a1Picture" Height="72" Canvas.Top="554" Width="94" />
-            <Image x:Name="c1Picture" Height="72" Canvas.Top="553" Width="94" Canvas.Left="198"/>
+            <Image x:Name="a1Picture" Height="72" Canvas.Top="554" Width="94" Tapped="a1Picture_Tapped" />
+            <Image x:Name="c1Picture" Height="72" Canvas.Top="553" Width="94" Canvas.Left="198" Tapped="c1Picture_Tapped"/>
             <Image x:Name="d1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="297"/>
-            <Image x:Name="e1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="396"/>
+            <Image x:Name="e1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="396" Tapped="e1Picture_Tapped"/>
             <Image x:Name="h1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="693"/>
-            <Image x:Name="g1Picture" Height="72" Canvas.Top="554" Width="94" Canvas.Left="594"/>
+            <Image x:Name="g1Picture" Height="72" Canvas.Top="554" Width="94" Canvas.Left="594" Tapped="g1Picture_Tapped"/>
             <Image x:Name="f1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="495"/>
             <Image x:Name="a2Picture" Height="72" Canvas.Top="474" Width="94" />
-            <Image x:Name="b2Picture" Height="72" Canvas.Top="474" Width="94" Canvas.Left="99" />
+            <Image x:Name="b2Picture" Height="72" Canvas.Top="474" Width="94" Canvas.Left="99" Tapped="b2Picture_Tapped" />
             <Image x:Name="c2Picture1" Height="72" Canvas.Top="476" Width="94" Canvas.Left="198" />
-            <Image x:Name="d2Picture" Height="72" Canvas.Top="480" Width="94" Canvas.Left="297" />
+            <Image x:Name="d2Picture" Height="72" Canvas.Top="480" Width="94" Canvas.Left="297" Tapped="d2Picture_Tapped" />
             <Image x:Name="e2Picture1" Height="72" Canvas.Top="474" Width="94" Canvas.Left="396" />
-            <Image x:Name="f2Picture" Height="72" Canvas.Top="474" Width="94" Canvas.Left="495" />
+            <Image x:Name="f2Picture" Height="72" Canvas.Top="474" Width="94" Canvas.Left="495" Tapped="f2Picture_Tapped" />
             <Image x:Name="g2Picture" Height="72" Canvas.Top="476" Width="94" Canvas.Left="594" />
-            <Image x:Name="h2Picture" Height="72" Canvas.Top="474" Width="94" Canvas.Left="693" />
-            <Image x:Name="a3Picture" Height="72" Canvas.Top="395" Width="94" />
+            <Image x:Name="h2Picture" Height="72" Canvas.Top="474" Width="94" Canvas.Left="693" Tapped="h2Picture_Tapped" />
+            <Image x:Name="a3Picture" Height="72" Canvas.Top="395" Width="94" Tapped="a3Picture_Tapped" />
             <Image x:Name="b3Picture" Height="72" Canvas.Top="397" Width="94" Canvas.Left="99" />
-            <Image x:Name="c3Picture" Height="72" Canvas.Top="395" Width="94" Canvas.Left="198" />
+            <Image x:Name="c3Picture" Height="72" Canvas.Top="395" Width="94" Canvas.Left="198" Tapped="c3Picture_Tapped" />
             <Image x:Name="d3Picture1" Height="72" Canvas.Top="390" Width="94" Canvas.Left="297" />
-            <Image x:Name="e3Picture" Height="72" Canvas.Top="395" Width="94" Canvas.Left="396" />
+            <Image x:Name="e3Picture" Height="72" Canvas.Top="395" Width="94" Canvas.Left="396" Tapped="e3Picture_Tapped" />
             <Image x:Name="f3Picture" Height="72" Canvas.Top="397" Width="94" Canvas.Left="495" />
-            <Image x:Name="g3Picture" Height="72" Canvas.Top="395" Width="94" Canvas.Left="594" />
+            <Image x:Name="g3Picture" Height="72" Canvas.Top="395" Width="94" Canvas.Left="594" Tapped="g3Picture_Tapped" />
             <Image x:Name="h3Picture" Height="72" Canvas.Top="397" Width="94" Canvas.Left="697" />
             <Image x:Name="a4Picture" Height="72" Canvas.Top="318" Width="94" />
             <Image x:Name="b4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="99" />
@@ -119,29 +119,29 @@
             <Image x:Name="g5Picture" Height="72" Canvas.Top="237" Width="94" Canvas.Left="594" />
             <Image x:Name="h5Picture" Height="72" Canvas.Top="237" Width="94" Canvas.Left="693" />
             <Image x:Name="a6Picture" Height="72" Canvas.Top="160" Width="94" />
-            <Image x:Name="b6Picture" Height="72" Canvas.Top="162" Width="94" Canvas.Left="99" />
+            <Image x:Name="b6Picture" Height="72" Canvas.Top="162" Width="94" Canvas.Left="99" Tapped="b6Picture_Tapped" />
             <Image x:Name="c6Picture" Height="72" Canvas.Top="160" Width="94" Canvas.Left="198" />
-            <Image x:Name="d6Picture" Height="72" Canvas.Top="160" Width="94" Canvas.Left="297" />
+            <Image x:Name="d6Picture" Height="72" Canvas.Top="160" Width="94" Canvas.Left="297" Tapped="d6Picture_Tapped" />
             <Image x:Name="e6Picture" Height="72" Canvas.Top="158" Width="94" Canvas.Left="396" />
-            <Image x:Name="f6Picture" Height="72" Canvas.Top="158" Width="94" Canvas.Left="495" />
+            <Image x:Name="f6Picture" Height="72" Canvas.Top="158" Width="94" Canvas.Left="495" Tapped="f6Picture_Tapped" />
             <Image x:Name="g6Picture" Height="72" Canvas.Top="158" Width="94" Canvas.Left="594" />
-            <Image x:Name="h6Picture" Height="72" Canvas.Top="160" Width="94" Canvas.Left="693" />
-            <Image x:Name="a7Picture" Height="72" Canvas.Top="79" Width="94" />
+            <Image x:Name="h6Picture" Height="72" Canvas.Top="160" Width="94" Canvas.Left="693" Tapped="h6Picture_Tapped" />
+            <Image x:Name="a7Picture" Height="72" Canvas.Top="79" Width="94" Tapped="a7Picture_Tapped" />
             <Image x:Name="b7Picture" Height="72" Canvas.Top="79" Width="94" Canvas.Left="99" />
-            <Image x:Name="c7Picture" Height="72" Canvas.Top="79" Width="94" Canvas.Left="198" />
+            <Image x:Name="c7Picture" Height="72" Canvas.Top="79" Width="94" Canvas.Left="198" Tapped="c7Picture_Tapped" />
             <Image x:Name="d7Picture" Height="72" Canvas.Top="79" Width="94" Canvas.Left="297" />
-            <Image x:Name="e7Picture" Height="72" Canvas.Top="81" Width="94" Canvas.Left="396" />
+            <Image x:Name="e7Picture" Height="72" Canvas.Top="81" Width="94" Canvas.Left="396" Tapped="e7Picture_Tapped" />
             <Image x:Name="f7Picture" Height="72" Canvas.Top="81" Width="94" Canvas.Left="495" />
-            <Image x:Name="g7Picture" Height="72" Canvas.Top="81" Width="94" Canvas.Left="595" />
+            <Image x:Name="g7Picture" Height="72" Canvas.Top="81" Width="94" Canvas.Left="595" Tapped="g7Picture_Tapped" />
             <Image x:Name="h7Picture" Height="72" Canvas.Top="79" Width="94" Canvas.Left="693" />
             <Image x:Name="a8Picture" Height="72" Canvas.Top="7" Width="94" />
-            <Image x:Name="b8Picture" Height="72" Canvas.Top="2" Width="94" Canvas.Left="99" />
+            <Image x:Name="b8Picture" Height="72" Canvas.Top="2" Width="94" Canvas.Left="99" Tapped="b8Picture_Tapped" />
             <Image x:Name="c8Picture" Height="72" Width="94" Canvas.Left="198" />
-            <Image x:Name="d8Picture" Height="72" Width="94" Canvas.Left="302" Canvas.Top="2" />
+            <Image x:Name="d8Picture" Height="72" Width="94" Canvas.Left="302" Canvas.Top="2" Tapped="d8Picture_Tapped" />
             <Image x:Name="e8Picture" Height="72" Width="94" Canvas.Left="396" Canvas.Top="2" />
-            <Image x:Name="f8Picture" Height="72" Width="94" Canvas.Left="495" Canvas.Top="4" />
+            <Image x:Name="f8Picture" Height="72" Width="94" Canvas.Left="495" Canvas.Top="4" Tapped="f8Picture_Tapped" />
             <Image x:Name="g8Picture" Height="72" Width="94" Canvas.Left="594" Canvas.Top="4" />
-            <Image x:Name="h8Picture" Height="72" Width="94" Canvas.Left="693" Canvas.Top="2" />
+            <Image x:Name="h8Picture" Height="72" Width="94" Canvas.Left="693" Canvas.Top="2" Tapped="h8Picture_Tapped" />
         </Canvas>
         <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="62,158,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click"/>
         <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="62,245,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click"/>
