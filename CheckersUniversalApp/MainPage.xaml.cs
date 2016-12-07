@@ -193,14 +193,24 @@ namespace CheckersUniversalApp
             rect.Fill = brushTemp;
         }
 
-        private void CanMOve(string str)
+        private void CanMoveTop(string str)
         {
-            // Right position
-            string letter = str.Substring(0, 1);
+            //Left Position
+            string letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
             string number = str.Substring(1, 1);
 
-            letter = IncrementLetter(letter);
-            number = (Convert.ToInt32(number) + 1).ToString();
+            letter = DecrementLetter(letter);
+          
+            int n = (Convert.ToInt32(number) - 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
 
             string ImageCode = letter + number + "Picture";
             string RectCode = letter + number + "Tile";
@@ -212,10 +222,159 @@ namespace CheckersUniversalApp
 
             Image redChecker = new Image();
             redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
-            if (img.Source != redChecker.Source && img.Source != blackChecker.Source)
+
+
+            if (img != null)
             {
-               rect.Fill = new SolidColorBrush(Colors.Pink);
+
+                if (img.Source == null && img.Source == null)
+                {
+                    rect.Fill = new SolidColorBrush(Colors.Gray);
+                }
             }
+
+            //Right Position
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+            number = str.Substring(1, 1);
+
+            letter = IncrementLetter(letter);
+
+            n = (Convert.ToInt32(number) - 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            blackChecker = new Image();
+            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+            redChecker = new Image();
+            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+            if (img != null)
+            {
+
+                if (img.Source == null && img.Source == null)
+                {
+                    rect.Fill = new SolidColorBrush(Colors.Gray);
+                }
+            }
+
+        }
+
+        private void CanMOve(string str)
+        {
+            // Right position
+            string letter = "";
+            if(str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+            
+            string number = str.Substring(1, 1);
+
+            letter = IncrementLetter(letter);
+            int n = (Convert.ToInt32(number) + 1);
+            if (n > 8)
+            {
+                n = 8;
+            }
+            number = n.ToString();
+
+            string ImageCode = letter + number + "Picture";
+            string RectCode = letter + number + "Tile";
+            Image img = FindName(ImageCode) as Image;
+            Rectangle rect = FindName(RectCode) as Rectangle;
+
+            Image blackChecker = new Image();
+            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+            Image redChecker = new Image();
+            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+            if(img != null)
+            {
+
+                if (img.Source == null && img.Source == null)
+                {
+                    rect.Fill = new SolidColorBrush(Colors.Gray);
+                }
+            }
+
+            //Left Position
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+
+            number = str.Substring(1, 1);
+            letter = DecrementLetter(letter);
+
+            n = (Convert.ToInt32(number) + 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            if (img != null)
+            {
+
+                if (img.Source == null && img.Source == null)
+                {
+                    rect.Fill = new SolidColorBrush(Colors.Gray);
+                }
+            }
+
+
+        }
+        private string DecrementLetter(string str)
+        {
+            string NewLetter = "";
+            switch (str.ToLower())
+            {
+               
+                case "b":
+                    NewLetter = "a";
+                    break;
+                case "c":
+                    NewLetter = "b";
+                    break;
+                case "d":
+                    NewLetter = "c";
+                    break;
+                case "e":
+                    NewLetter = "d";
+                    break;
+                case "f":
+                    NewLetter = "e";
+                    break;
+                case "g":
+                    NewLetter = "f";
+                    break;
+                case "h":
+                    NewLetter = "g";
+                    break;
+            }
+            return NewLetter;
         }
         private string IncrementLetter(string str)
         {
@@ -246,6 +405,178 @@ namespace CheckersUniversalApp
                     break;
             }
             return NewLetter;
+        }
+
+        private void Move(string str)
+        {
+            string Imagecode = str.Substring(0, 2);
+            string ImageName = Imagecode + "Picture";
+            Image img = FindName(ImageName) as Image;
+            Rectangle rect = FindName(str) as Rectangle;
+            
+            if (rect.Fill == new SolidColorBrush(Colors.Gray))
+            {
+                string positionToReceive = GetHiglighted(ImageName);
+                Image img2 = FindName(positionToReceive) as Image;
+                Image temp = new Image();
+
+                temp.Source = img.Source;
+                img.Source = img2.Source;
+                img2.Source = temp.Source;
+            }
+
+            
+
+        }
+
+        private string GetHiglighted(string str)
+        {
+            //1
+            string letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+            string number = str.Substring(1, 1);
+
+            letter = DecrementLetter(letter);
+
+            int n = (Convert.ToInt32(number) - 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            string ImageCode = letter + number + "Picture";
+            string RectCode = letter + number + "Tile";
+            Image img = FindName(ImageCode) as Image;
+            Rectangle rect = FindName(RectCode) as Rectangle;
+
+            Image blackChecker = new Image();
+            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+            Image redChecker = new Image();
+            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+            if (img != null)
+            {
+
+                if (rect.Fill == new SolidColorBrush(Colors.Gray))
+                {
+                    return img.Name.ToString();
+                }
+            }
+
+            //2
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+            number = str.Substring(1, 1);
+
+            letter = IncrementLetter(letter);
+
+            n = (Convert.ToInt32(number) - 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            blackChecker = new Image();
+            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+            redChecker = new Image();
+            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+            if (img != null)
+            {
+
+                if (rect.Fill == new SolidColorBrush(Colors.Gray))
+                {
+                    return img.Name.ToString();
+                }
+            }
+
+            //3
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+
+            number = str.Substring(1, 1);
+
+            letter = IncrementLetter(letter);
+            n = (Convert.ToInt32(number) + 1);
+            if (n > 8)
+            {
+                n = 8;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            blackChecker = new Image();
+            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+            redChecker = new Image();
+            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+            if (img != null)
+            {
+
+                if (rect.Fill == new SolidColorBrush(Colors.Gray))
+                {
+                    return img.Name.ToString();
+                }
+            }
+
+            //4
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+
+            number = str.Substring(1, 1);
+            letter = DecrementLetter(letter);
+
+            n = (Convert.ToInt32(number) + 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            if (img != null)
+            {
+
+                if (rect.Fill == new SolidColorBrush(Colors.Gray))
+                {
+                    return img.Name.ToString();
+                }
+            }
+
+            return "";
         }
 
         //Listeners ------------------
@@ -370,23 +701,28 @@ namespace CheckersUniversalApp
             CanMOve(rectangleName);
         }
 
-        private void b6Picture_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            PaintBoardTiles();
-            string imageName = ((Image)sender).Name.ToString();
-            string rectangleName = imageName.Substring(0, 2) + "Tile";
-            ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
-        }
 
+
+
+        //TOP OF THE BOARD
         private void c7Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
             PaintBoardTiles();
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+            CanMoveTop(rectangleName);
         }
+
+        private void b6Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            CanMoveTop(rectangleName);
+        }
+
 
         private void b8Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -394,7 +730,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+            CanMoveTop(rectangleName);
         }
 
         private void d8Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -403,11 +739,8 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+            CanMoveTop(rectangleName);
         }
-
-
-        //TOP OF THE BOARD
 
         private void f8Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -415,7 +748,8 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            
+            CanMoveTop(rectangleName);
+
         }
 
         private void h8Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -424,7 +758,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            
+            CanMoveTop(rectangleName);
         }
 
         private void g7Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -433,6 +767,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
+            CanMoveTop(rectangleName);
         }
 
         private void e7Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -441,6 +776,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
+            CanMoveTop(rectangleName);
         }
 
         private void h6Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -449,6 +785,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
+            CanMoveTop(rectangleName);
         }
 
         private void f6Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -457,6 +794,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
+            CanMoveTop(rectangleName);
         }
 
         private void d6Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -465,6 +803,17 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
+            CanMoveTop(rectangleName);
+        }
+
+        private void b4Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+            Move(rectangleName);
+
         }
     }
 }

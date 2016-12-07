@@ -103,7 +103,7 @@
             <Image x:Name="g3Picture" Height="72" Canvas.Top="395" Width="94" Canvas.Left="594" Tapped="g3Picture_Tapped" />
             <Image x:Name="h3Picture" Height="72" Canvas.Top="397" Width="94" Canvas.Left="697" />
             <Image x:Name="a4Picture" Height="72" Canvas.Top="318" Width="94" />
-            <Image x:Name="b4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="99" />
+            <Image x:Name="b4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="99" Tapped="b4Picture_Tapped" />
             <Image x:Name="c4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="198" />
             <Image x:Name="d4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="297" />
             <Image x:Name="e4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="396" />
