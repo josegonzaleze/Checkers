@@ -5,78 +5,80 @@
     xmlns:local="using:CheckersUniversalApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="MainGamePage"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="720" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1280">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="720" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1280" Name="boardGame">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="81*"/>
             <ColumnDefinition Width="79*"/>
         </Grid.ColumnDefinitions>
-        <Canvas Margin="0,48,239,46" Background="#FFF0E526" HorizontalAlignment="Right" Width="791" Grid.ColumnSpan="2">
-            <Rectangle x:Name="a8Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94"/>
-            <Rectangle x:Name="b8Tile" Fill="#FFE62C0E" Height="74" Stroke="Black" Width="94" Canvas.Left="99"/>
-            <Rectangle x:Name="c8Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="198"/>
-            <Rectangle x:Name="d8Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Left="297"/>
-            <Rectangle x:Name="e8Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="396"/>
-            <Rectangle x:Name="f8Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Left="495"/>
-            <Rectangle x:Name="g8Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="594"/>
-            <Rectangle x:Name="h8Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Left="694"/>
-            <Rectangle x:Name="a7Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="79"/>
-            <Rectangle x:Name="a6Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="158"/>
-            <Rectangle x:Name="a5Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="237"/>
-            <Rectangle x:Name="a4Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="316"/>
-            <Rectangle x:Name="a3Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="395"/>
-            <Rectangle x:Name="a2Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="474"/>
-            <Rectangle x:Name="a1Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="553"/>
-            <Rectangle x:Name="b7Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="99"/>
-            <Rectangle x:Name="c7Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="198"/>
-            <Rectangle x:Name="d7Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="297"/>
-            <Rectangle x:Name="e7Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="396"/>
-            <Rectangle x:Name="f7Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="495"/>
-            <Rectangle x:Name="g7Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="594"/>
-            <Rectangle x:Name="h7Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="694"/>
-            <Rectangle x:Name="b6Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="99"/>
-            <Rectangle x:Name="c6Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="198"/>
-            <Rectangle x:Name="d6Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="297"/>
-            <Rectangle x:Name="e6Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="396"/>
-            <Rectangle x:Name="f6Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="495"/>
-            <Rectangle x:Name="g6Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="594"/>
-            <Rectangle x:Name="h6Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="694"/>
-            <Rectangle x:Name="b5Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="99"/>
-            <Rectangle x:Name="c5Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="198"/>
-            <Rectangle x:Name="d5Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="297"/>
-            <Rectangle x:Name="e5Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="396"/>
-            <Rectangle x:Name="f5Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="495"/>
-            <Rectangle x:Name="g5Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="594"/>
-            <Rectangle x:Name="h5Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="693"/>
-            <Rectangle x:Name="b4Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="99"/>
-            <Rectangle x:Name="c4Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="198"/>
-            <Rectangle x:Name="d4Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="297"/>
-            <Rectangle x:Name="e4Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="396"/>
-            <Rectangle x:Name="f4Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="495"/>
-            <Rectangle x:Name="g4Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="594"/>
-            <Rectangle x:Name="h4Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="693"/>
-            <Rectangle x:Name="b3Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="99"/>
-            <Rectangle x:Name="c3Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="198"/>
-            <Rectangle x:Name="d3Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="297"/>
-            <Rectangle x:Name="e3Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="396"/>
-            <Rectangle x:Name="f3Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="495"/>
-            <Rectangle x:Name="g3Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="594"/>
-            <Rectangle x:Name="h3Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="693"/>
-            <Rectangle x:Name="b2Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="99"/>
-            <Rectangle x:Name="c2Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="198"/>
-            <Rectangle x:Name="d2Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="297"/>
-            <Rectangle x:Name="e2Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="396"/>
-            <Rectangle x:Name="f2Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="495"/>
-            <Rectangle x:Name="g2Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="594"/>
-            <Rectangle x:Name="h2Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="693"/>
-            <Rectangle x:Name="b1Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="552" Canvas.Left="99"/>
-            <Rectangle x:Name="c1Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="198"/>
-            <Rectangle x:Name="d1Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="552" Canvas.Left="297"/>
-            <Rectangle x:Name="e1Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="396"/>
-            <Rectangle x:Name="f1Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="495"/>
-            <Rectangle x:Name="g1Tile" Fill="#FFF3220D" Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="594"/>
-            <Rectangle x:Name="h1Tile" Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="693"/>
+        <Canvas Margin="0,48,239,46" Background="#FFF0E526" HorizontalAlignment="Right" Width="791" Grid.ColumnSpan="2" Name="gameBoardCanvas">
+            <Rectangle x:Name="a8Tile"  Height="74" Stroke="Black" Width="94"/>
+            <Rectangle x:Name="b8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="99"/>
+            <Rectangle x:Name="c8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="198"/>
+            <Rectangle x:Name="d8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="297"/>
+            <Rectangle x:Name="e8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="396"/>
+            <Rectangle x:Name="f8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="495"/>
+            <Rectangle x:Name="g8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="594"/>
+            <Rectangle x:Name="h8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="694"/>
+            <Rectangle x:Name="a7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79"/>
+            <Rectangle x:Name="a6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158"/>
+            <Rectangle x:Name="a5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237"/>
+            <Rectangle x:Name="a4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316"/>
+            <Rectangle x:Name="a3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395"/>
+            <Rectangle x:Name="a2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474"/>
+            <Rectangle x:Name="a1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" />
+            <Rectangle x:Name="b7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="99"/>
+            <Rectangle x:Name="c7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="198"/>
+            <Rectangle x:Name="d7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="297"/>
+            <Rectangle x:Name="e7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="396"/>
+            <Rectangle x:Name="f7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="495"/>
+            <Rectangle x:Name="g7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="594"/>
+            <Rectangle x:Name="h7Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="79" Canvas.Left="694"/>
+            <Rectangle x:Name="b6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="99"/>
+            <Rectangle x:Name="c6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="198"/>
+            <Rectangle x:Name="d6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="297"/>
+            <Rectangle x:Name="e6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="396"/>
+            <Rectangle x:Name="f6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="495"/>
+            <Rectangle x:Name="g6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="594"/>
+            <Rectangle x:Name="h6Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="158" Canvas.Left="694"/>
+            <Rectangle x:Name="b5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="99"/>
+            <Rectangle x:Name="c5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="198"/>
+            <Rectangle x:Name="d5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="297"/>
+            <Rectangle x:Name="e5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="396"/>
+            <Rectangle x:Name="f5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="495"/>
+            <Rectangle x:Name="g5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="594"/>
+            <Rectangle x:Name="h5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="693"/>
+            <Rectangle x:Name="b4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="99"/>
+            <Rectangle x:Name="c4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="198"/>
+            <Rectangle x:Name="d4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="297"/>
+            <Rectangle x:Name="e4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="396"/>
+            <Rectangle x:Name="f4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="495"/>
+            <Rectangle x:Name="g4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="594"/>
+            <Rectangle x:Name="h4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="693"/>
+            <Rectangle x:Name="b3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="99"/>
+            <Rectangle x:Name="c3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="198"/>
+            <Rectangle x:Name="d3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="297"/>
+            <Rectangle x:Name="e3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="396"/>
+            <Rectangle x:Name="f3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="495"/>
+            <Rectangle x:Name="g3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="594"/>
+            <Rectangle x:Name="h3Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="395" Canvas.Left="693"/>
+            <Rectangle x:Name="b2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="99"/>
+            <Rectangle x:Name="c2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="198"/>
+            <Rectangle x:Name="d2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="297"/>
+            <Rectangle x:Name="e2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="396"/>
+            <Rectangle x:Name="f2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="495"/>
+            <Rectangle x:Name="g2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="594"/>
+            <Rectangle x:Name="h2Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="474" Canvas.Left="693"/>
+            <Rectangle x:Name="b1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="552" Canvas.Left="99"/>
+            <Rectangle x:Name="c1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="198"/>
+            <Rectangle x:Name="d1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="552" Canvas.Left="297"/>
+            <Rectangle x:Name="e1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="396"/>
+            <Rectangle x:Name="f1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="495"/>
+            <Rectangle x:Name="g1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="594"/>
+            <Rectangle x:Name="h1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="693"/>
         </Canvas>
+        <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="62,158,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click"/>
     </Grid>
 </Page>
