@@ -78,7 +78,16 @@
             <Rectangle x:Name="f1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="495"/>
             <Rectangle x:Name="g1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="594"/>
             <Rectangle x:Name="h1Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="553" Canvas.Left="693"/>
+            <Image x:Name="b1Picture" Height="72" Canvas.Top="554" Width="94" Canvas.Left="99"/>
+            <Image x:Name="a1Picture" Height="72" Canvas.Top="554" Width="94"/>
+            <Image x:Name="c1Picture" Height="72" Canvas.Top="553" Width="94" Canvas.Left="198"/>
+            <Image x:Name="d1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="297"/>
+            <Image x:Name="e1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="396"/>
+            <Image x:Name="h1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="693"/>
+            <Image x:Name="g1Picture" Height="72" Canvas.Top="554" Width="94" Canvas.Left="594"/>
+            <Image x:Name="f1Picture" Height="72" Canvas.Top="552" Width="94" Canvas.Left="495"/>
         </Canvas>
         <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="62,158,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click"/>
+        <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="62,245,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click"/>
     </Grid>
 </Page>

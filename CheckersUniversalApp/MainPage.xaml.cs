@@ -31,20 +31,15 @@ namespace CheckersUniversalApp
             InitializeComponent();
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
 
-            //Creating colors RED and BLACk as defaults.
-            Color Red = new Color();
-            Color Black = new Color();
 
-            Red = Color.FromArgb(1, 255,0,0);
-            Black = Color.FromArgb(1, 255, 255, 255);
-
-            color1 = Red;
-            color2 = Black;
+            //Default
+            color1 = Colors.Red;
+            color2 = Colors.Black;
 
 
         }
         
-       public void StartGame()
+       public void PaintBoardTiles()
         {
 
             //Setting up the tables colors.
@@ -132,7 +127,16 @@ namespace CheckersUniversalApp
             h8Tile.Fill = brush1;
         }
 
+        public void StartGame()
+        {
+           // a1Picture = Image.FromFile("../Pics/image1.jpg");
+        }
         private void button_Click(object sender, RoutedEventArgs e)
+        {
+            PaintBoardTiles();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
             StartGame();
         }
