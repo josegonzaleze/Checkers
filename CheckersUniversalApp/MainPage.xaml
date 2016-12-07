@@ -7,8 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Canvas Margin="242,48,240,46" Background="#FFECE78B">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="720" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1280">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="81*"/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Margin="0,48,239,46" Background="#FFECE78B" HorizontalAlignment="Right" Width="791" Grid.ColumnSpan="2">
             <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94"/>
             <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="99"/>
             <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="198"/>
