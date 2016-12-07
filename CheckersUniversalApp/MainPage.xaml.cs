@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -129,7 +130,44 @@ namespace CheckersUniversalApp
 
         public void StartGame()
         {
-           // a1Picture = Image.FromFile("../Pics/image1.jpg");
+            Image blackChecker = new Image();
+            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+            Image redChecker = new Image();
+            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+            //set up game "BLACK"
+            a1Picture.Source = blackChecker.Source;
+            c1Picture.Source = blackChecker.Source;
+            e1Picture.Source = blackChecker.Source;
+            g1Picture.Source = blackChecker.Source;
+
+            b2Picture.Source = blackChecker.Source;
+            d2Picture.Source = blackChecker.Source;
+            f2Picture.Source = blackChecker.Source;
+            h2Picture.Source = blackChecker.Source;
+
+            a3Picture.Source = blackChecker.Source;
+            c3Picture.Source = blackChecker.Source;
+            e3Picture.Source = blackChecker.Source;
+            g3Picture.Source = blackChecker.Source;
+
+            //Set up game "RED"
+            b8Picture.Source = redChecker.Source;
+            d8Picture.Source = redChecker.Source;
+            f8Picture.Source = redChecker.Source;
+            h8Picture.Source = redChecker.Source;
+
+            a7Picture.Source = redChecker.Source;
+            c7Picture.Source = redChecker.Source;
+            e7Picture.Source = redChecker.Source;
+            g7Picture.Source = redChecker.Source;
+
+            b6Picture.Source = redChecker.Source;
+            d6Picture.Source = redChecker.Source;
+            f6Picture.Source = redChecker.Source;
+            h6Picture.Source = redChecker.Source;
+
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
