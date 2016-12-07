@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="CheckersUniversalApp.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CheckersUniversalApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Rectangle x:Name="colorTest" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="83" Margin="582,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="92"/>
+        <RadioButton x:Name="redRB1" Content="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="126,132,0,0" Checked="redRB1_Checked" GroupName="color1" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0" IsChecked="True"/>
+        <RadioButton x:Name="blueRB1" Content="Blue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,132,0,0" GroupName="color1" Checked="blueRB1_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Make changes to the colors of your board." VerticalAlignment="Top" Margin="100,84,0,0" Height="42" Width="759" FontFamily="Impact" FontSize="24" Foreground="#FF1E8EA3"/>
+        <RadioButton x:Name="greenRB1" Content="Green" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,132,0,0" GroupName="color1" Checked="greenRB1_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <RadioButton x:Name="yellowRB1" Content="Yellow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="126,167,0,0" GroupName="color1" Checked="yellowRB1_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <RadioButton x:Name="purpleRB1" Content="Purple" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,167,0,0" GroupName="color1" Checked="purpleRB1_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <Rectangle x:Name="colorTest2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="83" Margin="582,268,0,0" Stroke="Black" VerticalAlignment="Top" Width="92"/>
+        <RadioButton x:Name="redRB2" Content="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="126,271,0,0" Checked="redRB2_Checked" GroupName="color2" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0"/>
+        <RadioButton x:Name="blueRB2" Content="Blue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,271,0,0" GroupName="color2" Checked="blueRB2_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <RadioButton x:Name="greenRB2" Content="Green" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,271,0,0" GroupName="color2" Checked="greenRB2_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <RadioButton x:Name="yellowRB2" Content="Yellow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="126,306,0,0" GroupName="color2" Checked="yellowRB2_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <RadioButton x:Name="purpleRB2" Content="Purple" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,306,0,0" GroupName="color2" Checked="purpleRB2_Checked" FontSize="20" Padding="8,2,0,0"/>
+        <RadioButton x:Name="blackRB1" Content="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,167,0,0" Checked="blackRB1_Checked" GroupName="color1" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0"/>
+        <RadioButton x:Name="blackRB2" Content="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,306,0,0" Checked="blackRB2_Checked" GroupName="color2" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0" IsChecked="True"/>
+    </Grid>
+</Page>

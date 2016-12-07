@@ -31,5 +31,10 @@ namespace CheckersUniversalApp
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        private void settingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingsPage));
+        }
     }
 }
