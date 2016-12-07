@@ -8,12 +8,22 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid HorizontalAlignment="Left" Height="427" Margin="368,150,0,0" VerticalAlignment="Top" Width="481">
-            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="10,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="154,102,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="262,207,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-            <Rectangle Fill="#FFEA2410" HorizontalAlignment="Left" Height="100" Margin="371,317,0,0" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-        </Grid>
-
+        <Canvas Margin="242,48,240,46" Background="#FFECE78B">
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="99"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="198"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="297"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="396"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="495"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="594"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Left="694"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="79"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="158"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="237"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="316"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="395"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="474"/>
+            <Rectangle Fill="#FF1B1918" Height="74" Stroke="Black" Width="94" Canvas.Top="553"/>
+        </Canvas>
     </Grid>
 </Page>
