@@ -519,7 +519,7 @@ namespace CheckersUniversalApp
 
         private string GetHiglighted(string str)
         {
-            //1
+            //up right
             string letter = "";
             if (str.Substring(0, 1) != null)
             {
@@ -527,12 +527,12 @@ namespace CheckersUniversalApp
             }
             string number = str.Substring(1, 1);
 
-            letter = DecrementLetter(letter);
+            letter = IncrementLetter(letter);
 
-            int n = (Convert.ToInt32(number) - 1);
-            if (n < 1)
+            int n = (Convert.ToInt32(number) + 1);
+            if (n > 8 )
             {
-                n = 1;
+                n = 8;
             }
             number = n.ToString();
 
@@ -541,23 +541,12 @@ namespace CheckersUniversalApp
             Image img = FindName(ImageCode) as Image;
             Rectangle rect = FindName(RectCode) as Rectangle;
 
-            Image blackChecker = new Image();
-            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
-
-            Image redChecker = new Image();
-            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
-
-
-            if (img != null)
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
             {
-
-                if (rect.Fill == new SolidColorBrush(Colors.Gray))
-                {
                     return img.Name.ToString();
-                }
             }
 
-            //2
+            //up left
             letter = "";
             if (str.Substring(0, 1) != null)
             {
@@ -565,7 +554,61 @@ namespace CheckersUniversalApp
             }
             number = str.Substring(1, 1);
 
+            letter = DecrementLetter(letter);
+
+            n = (Convert.ToInt32(number) + 1);
+            if (n < 8)
+            {
+                n = 8;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            {
+                return img.Name.ToString();
+            }
+
+            //bottom right
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+
+            number = str.Substring(1, 1);
+
             letter = IncrementLetter(letter);
+            n = (Convert.ToInt32(number) - 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            {
+                return img.Name.ToString();
+            }
+
+            //bottom left
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+
+            number = str.Substring(1, 1);
+            letter = DecrementLetter(letter);
 
             n = (Convert.ToInt32(number) - 1);
             if (n < 1)
@@ -579,89 +622,9 @@ namespace CheckersUniversalApp
             img = FindName(ImageCode) as Image;
             rect = FindName(RectCode) as Rectangle;
 
-            blackChecker = new Image();
-            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
-
-            redChecker = new Image();
-            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
-
-
-            if (img != null)
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
             {
-
-                if (rect.Fill == new SolidColorBrush(Colors.Gray))
-                {
-                    return img.Name.ToString();
-                }
-            }
-
-            //3
-            letter = "";
-            if (str.Substring(0, 1) != null)
-            {
-                letter = str.Substring(0, 1);
-            }
-
-            number = str.Substring(1, 1);
-
-            letter = IncrementLetter(letter);
-            n = (Convert.ToInt32(number) + 1);
-            if (n > 8)
-            {
-                n = 8;
-            }
-            number = n.ToString();
-
-            ImageCode = letter + number + "Picture";
-            RectCode = letter + number + "Tile";
-            img = FindName(ImageCode) as Image;
-            rect = FindName(RectCode) as Rectangle;
-
-            blackChecker = new Image();
-            blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
-
-            redChecker = new Image();
-            redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
-
-
-            if (img != null)
-            {
-
-                if (rect.Fill == new SolidColorBrush(Colors.Gray))
-                {
-                    return img.Name.ToString();
-                }
-            }
-
-            //4
-            letter = "";
-            if (str.Substring(0, 1) != null)
-            {
-                letter = str.Substring(0, 1);
-            }
-
-            number = str.Substring(1, 1);
-            letter = DecrementLetter(letter);
-
-            n = (Convert.ToInt32(number) + 1);
-            if (n < 1)
-            {
-                n = 1;
-            }
-            number = n.ToString();
-
-            ImageCode = letter + number + "Picture";
-            RectCode = letter + number + "Tile";
-            img = FindName(ImageCode) as Image;
-            rect = FindName(RectCode) as Rectangle;
-
-            if (img != null)
-            {
-
-                if (rect.Fill == new SolidColorBrush(Colors.Gray))
-                {
-                    return img.Name.ToString();
-                }
+                return img.Name.ToString();
             }
 
             return "";
@@ -673,8 +636,129 @@ namespace CheckersUniversalApp
             string ImageName = code + "Picture";
             string RectangleName = code + "Tile";
             Rectangle rect = FindName(RectangleName) as Rectangle;
+            Image img = FindName(ImageName) as Image;
 
-            return true;
+            if(img.Source == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private string FindSender(string str)
+        {
+            //up right
+            string letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+            string number = str.Substring(1, 1);
+
+            letter = IncrementLetter(letter);
+
+            int n = (Convert.ToInt32(number) + 1);
+            if (n > 8)
+            {
+                n = 8;
+            }
+            number = n.ToString();
+
+            string ImageCode = letter + number + "Picture";
+            string RectCode = letter + number + "Tile";
+            Image img = FindName(ImageCode) as Image;
+            Rectangle rect = FindName(RectCode) as Rectangle;
+
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            {
+                return img.Name.ToString();
+            }
+
+            //up left
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+            number = str.Substring(1, 1);
+
+            letter = DecrementLetter(letter);
+
+            n = (Convert.ToInt32(number) + 1);
+            if (n < 8)
+            {
+                n = 8;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            {
+                return img.Name.ToString();
+            }
+
+            //bottom right
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+
+            number = str.Substring(1, 1);
+
+            letter = IncrementLetter(letter);
+            n = (Convert.ToInt32(number) - 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            {
+                return img.Name.ToString();
+            }
+
+            //bottom left
+            letter = "";
+            if (str.Substring(0, 1) != null)
+            {
+                letter = str.Substring(0, 1);
+            }
+
+            number = str.Substring(1, 1);
+            letter = DecrementLetter(letter);
+
+            n = (Convert.ToInt32(number) - 1);
+            if (n < 1)
+            {
+                n = 1;
+            }
+            number = n.ToString();
+
+            ImageCode = letter + number + "Picture";
+            RectCode = letter + number + "Tile";
+            img = FindName(ImageCode) as Image;
+            rect = FindName(RectCode) as Rectangle;
+
+            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            {
+                return img.Name.ToString();
+            }
+
+            return "";
+
         }
 
         //Listeners -----------------------------------------------------------
@@ -1464,13 +1548,13 @@ namespace CheckersUniversalApp
         private void b4Tile_Tapped(object sender, TappedRoutedEventArgs e)
         {
             //Get names for location
-            PaintBoardTiles();
-            string imageName = ((Image)sender).Name.ToString();
-            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            
+            string rectangleName = ((Rectangle)sender).Name.ToString();
+            
 
             if (CanTakeCoin(rectangleName))
             {
-
+                string NameOfSender = FindSender(rectangleName);
             }
         }
 
