@@ -149,11 +149,10 @@
         </Canvas>
         <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="450,149,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click" Grid.Column="1"/>
         <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="450,281,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click" Grid.Column="1"/>
-        <Button x:Name="newGameButton" Content="New Game" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,111,0,0" Height="64" Width="130" Click="newGameButton_Click"/>
-        <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Icon="Home" Label="Home" VerticalAlignment="Top" Margin="26,253,0,0" Grid.Row="1" Click="homeAppBarButton_Click" Height="64" Width="73">
+        <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Icon="Home" Label="Home" VerticalAlignment="Top" Margin="26,253,0,0" Grid.Row="1" Click="homeAppBarButton_Click" Height="64" Width="73" ToolTipService.ToolTip="Takes you back to the Main Menu">
             <AppBarSeparator Height="100" Width="100"/>
         </AppBarButton>
         <AppBarSeparator HorizontalAlignment="Left" VerticalAlignment="Top" Margin="83,257,0,0" Grid.Row="1"/>
-        <AppBarButton x:Name="newGameAppBarButton" HorizontalAlignment="Left" Icon="RepeatAll" Label="New Game" VerticalAlignment="Top" Margin="100,253,0,0" Grid.Row="1" Width="73" Height="64"/>
+        <AppBarButton x:Name="newGameAppBarButton" HorizontalAlignment="Left" Icon="RepeatAll" Label="New Game" VerticalAlignment="Top" Margin="100,253,0,0" Grid.Row="1" Width="73" Height="64" Click="newGameAppBarButton_Click" ToolTipService.ToolTip="Starts a New Game"/>
     </Grid>
 </Page>

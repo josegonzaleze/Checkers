@@ -1281,7 +1281,14 @@ namespace CheckersUniversalApp
 
         }
 
+<<<<<<< HEAD
 // HEAD
+=======
+<<<<<<< HEAD
+        private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
         private void a5Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
             PaintBoardTiles();
@@ -1444,14 +1451,23 @@ namespace CheckersUniversalApp
         }
 
         private void newGameButton_Click(object sender, RoutedEventArgs e)
-        {
-            StartGame();
-        }
-
-        private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
+>>>>>>> origin/master
         {
             this.Frame.Navigate(typeof(MainMenu));
+        }
 
+        private void newGameAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+<<<<<<< HEAD
+            StartGame();
+=======
+            this.Frame.Navigate(typeof(MainMenu));
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
         }
 
 

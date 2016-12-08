@@ -15,5 +15,6 @@
         <Button x:Name="startGameButton" Content="Start Game" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="569,397,0,0" Height="69" Width="141" Click="startGameButton_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="settingsButton" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="569,509,0,0" Height="69" Width="141" Click="settingsButton_Click" Grid.ColumnSpan="2"/>
         <Image x:Name="titleImage" Height="319" VerticalAlignment="Top" Margin="197,73,0,0" Source="Assets/CheckersTitle.png" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="889"/>
+        <AppBarButton x:Name="aboutAppBarButton" HorizontalAlignment="Left" Icon="Help" Label="About" VerticalAlignment="Top" Grid.Column="1" Margin="472,550,0,0" Height="69" Width="78" Click="aboutAppBarButton_Click"/>
     </Grid>
 </Page>
