@@ -8,8 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="startGameButton" Content="Start Game" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="569,383,0,0" Height="69" Width="141" Click="startGameButton_Click"/>
-        <Button x:Name="settingsButton" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="569,509,0,0" Height="69" Width="141" Click="settingsButton_Click"/>
-        <Image x:Name="titleImage" HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="889" Margin="206,78,0,0" Source="Assets/CheckersTitle.png"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="startGameButton" Content="Start Game" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="569,397,0,0" Height="69" Width="141" Click="startGameButton_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="settingsButton" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="569,509,0,0" Height="69" Width="141" Click="settingsButton_Click" Grid.ColumnSpan="2"/>
+        <Image x:Name="titleImage" Height="319" VerticalAlignment="Top" Margin="197,73,0,0" Source="Assets/CheckersTitle.png" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="889"/>
     </Grid>
 </Page>

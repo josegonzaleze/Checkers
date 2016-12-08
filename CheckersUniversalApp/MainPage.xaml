@@ -9,11 +9,15 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="720" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1280" Name="boardGame">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="361*"/>
+            <RowDefinition Height="359*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="81*"/>
-            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Canvas Margin="0,48,239,46" Background="#FFF0E526" HorizontalAlignment="Right" Width="791" Grid.ColumnSpan="2" Name="gameBoardCanvas">
+        <Canvas Margin="0,48,239,46" Background="#FFF0E526" HorizontalAlignment="Right" Width="791" Name="gameBoardCanvas" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Rectangle x:Name="a8Tile"  Height="74" Stroke="Black" Width="94"/>
             <Rectangle x:Name="b8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="99"/>
             <Rectangle x:Name="c8Tile"  Height="74" Stroke="Black" Width="94" Canvas.Left="198"/>
@@ -143,7 +147,13 @@
             <Image x:Name="g8Picture" Height="72" Width="94" Canvas.Left="594" Canvas.Top="4" />
             <Image x:Name="h8Picture" Height="72" Width="94" Canvas.Left="693" Canvas.Top="2" Tapped="h8Picture_Tapped" />
         </Canvas>
-        <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="62,158,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click"/>
-        <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="62,245,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click"/>
+        <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="450,149,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click" Grid.Column="1"/>
+        <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="450,281,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click" Grid.Column="1"/>
+        <Button x:Name="newGameButton" Content="New Game" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="62,111,0,0" Height="64" Width="130" Click="newGameButton_Click"/>
+        <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Icon="Home" Label="Home" VerticalAlignment="Top" Margin="26,253,0,0" Grid.Row="1" Click="homeAppBarButton_Click" Height="64" Width="73">
+            <AppBarSeparator Height="100" Width="100"/>
+        </AppBarButton>
+        <AppBarSeparator HorizontalAlignment="Left" VerticalAlignment="Top" Margin="83,257,0,0" Grid.Row="1"/>
+        <AppBarButton x:Name="newGameAppBarButton" HorizontalAlignment="Left" Icon="RepeatAll" Label="New Game" VerticalAlignment="Top" Margin="100,253,0,0" Grid.Row="1" Width="73" Height="64"/>
     </Grid>
 </Page>

@@ -23,5 +23,6 @@
         <RadioButton x:Name="purpleRB2" Content="Purple" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,306,0,0" GroupName="color2" Checked="purpleRB2_Checked" FontSize="20" Padding="8,2,0,0"/>
         <RadioButton x:Name="blackRB1" Content="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,167,0,0" Checked="blackRB1_Checked" GroupName="color1" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0"/>
         <RadioButton x:Name="blackRB2" Content="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,306,0,0" Checked="blackRB2_Checked" GroupName="color2" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0" IsChecked="True"/>
+        <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Label="Home" VerticalAlignment="Top" Margin="40,607,0,0" ToolTipService.ToolTip="Takes you back to the Main Menu" Icon="Home" Click="homeAppBarButton_Click" Height="64" Width="72"/>
     </Grid>
 </Page>

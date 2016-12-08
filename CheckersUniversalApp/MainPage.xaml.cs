@@ -1250,6 +1250,9 @@ namespace CheckersUniversalApp
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
             currentView.BackRequested += backButton_Tapped;
+
+            PaintBoardTiles();
+            StartGame();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -1265,6 +1268,7 @@ namespace CheckersUniversalApp
 
         }
 
+<<<<<<< HEAD
         private void a5Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
             PaintBoardTiles();
@@ -1424,6 +1428,16 @@ namespace CheckersUniversalApp
                     CanMoveTop(imageName);
                 }
             }
+=======
+        private void newGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            StartGame();
+        }
+
+        private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainMenu));
+>>>>>>> origin/master
         }
     }
 }
