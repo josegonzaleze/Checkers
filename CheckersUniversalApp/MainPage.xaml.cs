@@ -200,35 +200,59 @@ namespace CheckersUniversalApp
 
             //set up game "RED"
             a1Picture.Source = redChecker.Source;
+            a1Picture.Tag = "red";
             c1Picture.Source = redChecker.Source;
+            c1Picture.Tag = "red";
             e1Picture.Source = redChecker.Source;
+            e1Picture.Tag = "red";
             g1Picture.Source = redChecker.Source;
+            g1Picture.Tag = "red";
 
             b2Picture.Source = redChecker.Source;
+            b2Picture.Tag = "red";
             d2Picture.Source = redChecker.Source;
+            d2Picture.Tag = "red";
             f2Picture.Source = redChecker.Source;
+            f2Picture.Tag = "red";
             h2Picture.Source = redChecker.Source;
+            h2Picture.Tag = "red";
 
             a3Picture.Source = redChecker.Source;
+            a3Picture.Tag = "red";
             c3Picture.Source = redChecker.Source;
+            c3Picture.Tag = "red";
             e3Picture.Source = redChecker.Source;
+            e3Picture.Tag = "red";
             g3Picture.Source = redChecker.Source;
+            g3Picture.Tag = "red";
 
             //Set up game "BLACK"
-            b8Picture.Source = blackChecker.Source; 
-            d8Picture.Source = blackChecker.Source; 
-            f8Picture.Source = blackChecker.Source; 
-            h8Picture.Source = blackChecker.Source; 
+            b8Picture.Source = blackChecker.Source;
+            b8Picture.Tag = "black";
+            d8Picture.Source = blackChecker.Source;
+            d8Picture.Tag = "black";
+            f8Picture.Source = blackChecker.Source;
+            f8Picture.Tag = "black";
+            h8Picture.Source = blackChecker.Source;
+            h8Picture.Tag = "black";
 
             a7Picture.Source = blackChecker.Source;
+            a7Picture.Tag = "black";
             c7Picture.Source = blackChecker.Source;
+            c7Picture.Tag = "black";
             e7Picture.Source = blackChecker.Source;
+            e7Picture.Tag = "black";
             g7Picture.Source = blackChecker.Source;
+            g7Picture.Tag = "black";
 
             b6Picture.Source = blackChecker.Source;
+            b6Picture.Tag = "black";
             d6Picture.Source = blackChecker.Source;
+            d6Picture.Tag = "black";
             f6Picture.Source = blackChecker.Source;
+            f6Picture.Tag = "black";
             h6Picture.Source = blackChecker.Source;
+            h6Picture.Tag = "black";
 
         }
         private void button_Click(object sender, RoutedEventArgs e)
@@ -642,7 +666,7 @@ namespace CheckersUniversalApp
 
         //Listeners ------------------
 
-            //BOTTOM OF THE BOARD
+            
         private void a1Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
             PaintBoardTiles();
@@ -651,11 +675,19 @@ namespace CheckersUniversalApp
             ChangeBackground(rectangleName);
             //Find what tile is it BLACK or RED
             Image img = FindName(imageName) as Image;
+
             if (img != null)
             {
-               // string test = img.Source;
+                if(img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if(img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
             }
-            CanMOve(rectangleName);
+            
 
         }
 
@@ -666,7 +698,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+            
         }
 
         private void a3Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -675,7 +722,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+            
         }
 
         private void c3Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -684,7 +746,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+           
         }
 
         private void d2Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -693,7 +770,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+            
         }
 
         private void e3Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -702,7 +794,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+           
         }
 
         private void f2Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -711,7 +818,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+           
         }
 
         private void g1Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -720,7 +842,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+            
         }
 
         private void h2Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -729,7 +866,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+          
         }
 
         private void c1Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -738,7 +890,22 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+           
         }
 
         private void e1Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -747,7 +914,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void g3Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -756,7 +937,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void a7Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -765,20 +960,46 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMOve(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
 
 
-
-        //TOP OF THE BOARD
         private void c7Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
             PaintBoardTiles();
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void b6Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -787,7 +1008,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
 
@@ -797,7 +1032,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void d8Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -806,7 +1055,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void f8Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -815,7 +1078,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
 
         }
 
@@ -825,7 +1102,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            
         }
 
         private void g7Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -834,7 +1111,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void e7Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -843,7 +1134,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void h6Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -852,7 +1157,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void f6Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -861,7 +1180,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void d6Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -870,7 +1203,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            CanMoveTop(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
         }
 
         private void b4Picture_Tapped(object sender, TappedRoutedEventArgs e)
@@ -879,7 +1226,21 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
-            Move(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+
 
         }
 
@@ -902,6 +1263,167 @@ namespace CheckersUniversalApp
         {
             this.Frame.Navigate(typeof(MainMenu));
 
+        }
+
+        private void a5Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+        }
+
+        private void c5Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+        }
+
+        private void d4Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+        }
+
+        private void e5Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+        }
+
+        private void f4Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+        }
+
+        private void g5Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
+        }
+
+        private void h4Picture_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+            ChangeBackground(rectangleName);
+
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+
+            if (img != null)
+            {
+                if (img.Tag.ToString() == "red")
+                {
+                    CanMOve(imageName);
+                }
+                else if (img.Tag.ToString() == "black")
+                {
+                    CanMoveTop(imageName);
+                }
+            }
         }
     }
 }
