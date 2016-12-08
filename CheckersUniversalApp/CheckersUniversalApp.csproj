@@ -119,6 +119,7 @@
     <Content Include="Assets\checker.scale-100.png" />
     <Content Include="Assets\checker.scale-150.png" />
     <Content Include="Assets\checker.scale-200.png" />
+    <Content Include="Assets\CheckersTitle.png" />
     <Content Include="Assets\redChecker.png" />
     <Content Include="Assets\redKingChecker.png" />
     <Content Include="Assets\Square150x150Logo.scale-100.png" />

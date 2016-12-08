@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -26,19 +27,12 @@ namespace CheckersUniversalApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public Color color1;
-        public Color color2;
+        public Color color1 = SettingsPage.color1;
+        public Color color2 = SettingsPage.color2;
         public MainPage()
         {
             InitializeComponent();
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
-
-
-            //Default
-            color1 = Colors.Red;
-            color2 = Colors.Black;
-
-
         }
         
        public void PaintBoardTiles()
@@ -813,6 +807,27 @@ namespace CheckersUniversalApp
             string rectangleName = imageName.Substring(0, 2) + "Tile";
             ChangeBackground(rectangleName);
             Move(rectangleName);
+
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            currentView.BackRequested += backButton_Tapped;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.BackRequested += backButton_Tapped;
+        }
+
+        private void backButton_Tapped(object sender, BackRequestedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainMenu));
 
         }
     }
