@@ -147,12 +147,16 @@
             <Image x:Name="g8Picture" Height="72" Width="94" Canvas.Left="594" Canvas.Top="4" />
             <Image x:Name="h8Picture" Height="72" Width="94" Canvas.Left="693" Canvas.Top="2" Tapped="h8Picture_Tapped" />
         </Canvas>
-        <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="450,149,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click" Grid.Column="1"/>
-        <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="450,281,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click" Grid.Column="1"/>
+        <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="450,132,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click" Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="450,224,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click" Grid.Column="1" Grid.Row="1"/>
         <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Icon="Home" Label="Home" VerticalAlignment="Top" Margin="26,253,0,0" Grid.Row="1" Click="homeAppBarButton_Click" Height="64" Width="73" ToolTipService.ToolTip="Takes you back to the Main Menu">
             <AppBarSeparator Height="100" Width="100"/>
         </AppBarButton>
         <AppBarSeparator HorizontalAlignment="Left" VerticalAlignment="Top" Margin="83,257,0,0" Grid.Row="1"/>
         <AppBarButton x:Name="newGameAppBarButton" HorizontalAlignment="Left" Icon="RepeatAll" Label="New Game" VerticalAlignment="Top" Margin="100,253,0,0" Grid.Row="1" Width="73" Height="64" Click="newGameAppBarButton_Click" ToolTipService.ToolTip="Starts a New Game"/>
+        <TextBlock x:Name="playerName1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="26,200,0,0" Height="49" Width="198" FontSize="24" TextAlignment="Center" FontFamily="Impact"/>
+        <TextBlock x:Name="playerName2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="422,200,0,0" Height="49" Width="198" FontSize="24" TextAlignment="Center" FontFamily="Impact" Grid.Column="1"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="124" Margin="63,247,0,0" Source="Assets/checker.png" Stretch="Fill"/>
+        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="124" VerticalAlignment="Top" Width="108" Margin="471,247,0,0" Source="Assets/blackPlayerChecker.png" Stretch="Fill" Grid.Column="1" Grid.RowSpan="2"/>
     </Grid>
 </Page>

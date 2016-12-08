@@ -1266,6 +1266,8 @@ namespace CheckersUniversalApp
 
             PaintBoardTiles();
             StartGame();
+            playerName1.Text = SettingsPage.name1;
+            playerName2.Text = SettingsPage.name2;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

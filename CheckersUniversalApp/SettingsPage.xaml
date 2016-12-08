@@ -23,6 +23,11 @@
         <RadioButton x:Name="purpleRB2" Content="Purple" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,306,0,0" GroupName="color2" Checked="purpleRB2_Checked" FontSize="20" Padding="8,2,0,0"/>
         <RadioButton x:Name="blackRB1" Content="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,167,0,0" Checked="blackRB1_Checked" GroupName="color1" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0"/>
         <RadioButton x:Name="blackRB2" Content="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="371,306,0,0" Checked="blackRB2_Checked" GroupName="color2" FontSize="20" Height="32" VerticalContentAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="120" HorizontalContentAlignment="Left" Padding="8,2,0,0" IsChecked="True"/>
-        <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Label="Home" VerticalAlignment="Top" Margin="40,607,0,0" ToolTipService.ToolTip="Takes you back to the Main Menu" Icon="Home" Click="homeAppBarButton_Click" Height="64" Width="72"/>
+        <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Label="Home" VerticalAlignment="Top" Margin="49,602,0,0" ToolTipService.ToolTip="Takes you back to the Main Menu" Icon="Home" Click="homeAppBarButton_Click" Height="64" Width="72"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type the name of the players." VerticalAlignment="Top" Margin="100,396,0,0" Height="42" Width="759" FontFamily="Impact" FontSize="24" Foreground="#FF1E8EA3"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="81" VerticalAlignment="Top" Width="130" Margin="551,449,0,0" Source="Assets/checker.png" Stretch="Fill"/>
+        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="110" Margin="564,526,0,0" Source="Assets/blackPlayerChecker.png" Stretch="Fill"/>
+        <TextBox x:Name="nameBox1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Player 1" VerticalAlignment="Top" Margin="100,468,0,0" Height="44" Width="435" FontSize="22" FontFamily="Impact" Foreground="#FF7A0909" TextChanged="nameBox1_TextChanged"/>
+        <TextBox x:Name="nameBox2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Player 2" VerticalAlignment="Top" Margin="100,553,0,0" Height="44" Width="435" FontSize="22" FontFamily="Impact" Foreground="Black" TextChanged="nameBox2_TextChanged"/>
     </Grid>
 </Page>

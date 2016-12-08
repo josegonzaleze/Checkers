@@ -27,6 +27,9 @@ namespace CheckersUniversalApp
         public static Color color1 = Colors.Red;
         public static Color color2 = Colors.Black;
 
+        public static string name1 = "Player 1";
+        public static string name2 = "Player 2";
+
         public SettingsPage()
         {
             this.InitializeComponent();
@@ -138,6 +141,16 @@ namespace CheckersUniversalApp
         private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainMenu));
+        }
+
+        private void nameBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            name1 = nameBox1.Text;
+        }
+
+        private void nameBox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            name2 = nameBox2.Text;
         }
     }
 }

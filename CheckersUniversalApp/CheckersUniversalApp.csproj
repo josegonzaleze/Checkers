@@ -118,6 +118,7 @@
   <ItemGroup>
     <Content Include="Assets\blackChecker.png" />
     <Content Include="Assets\blackKingChecker.png" />
+    <Content Include="Assets\blackPlayerChecker.png" />
     <Content Include="Assets\checker.png" />
     <Content Include="Assets\checker.scale-100.png" />
     <Content Include="Assets\checker.scale-150.png" />
