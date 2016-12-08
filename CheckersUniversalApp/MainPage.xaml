@@ -109,18 +109,18 @@
             <Image x:Name="a4Picture" Height="72" Canvas.Top="318" Width="94" />
             <Image x:Name="b4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="99" Tapped="b4Picture_Tapped" />
             <Image x:Name="c4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="198" />
-            <Image x:Name="d4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="297" />
+            <Image x:Name="d4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="297" Tapped="d4Picture_Tapped" />
             <Image x:Name="e4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="396" />
-            <Image x:Name="f4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="495" />
+            <Image x:Name="f4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="495" Tapped="f4Picture_Tapped" />
             <Image x:Name="g4Picture" Height="72" Canvas.Top="318" Width="94" Canvas.Left="594" />
-            <Image x:Name="h4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="693" />
-            <Image x:Name="a5Picture" Height="72" Canvas.Top="237" Width="94" />
+            <Image x:Name="h4Picture" Height="72" Canvas.Top="316" Width="94" Canvas.Left="693" Tapped="h4Picture_Tapped" />
+            <Image x:Name="a5Picture" Height="72" Canvas.Top="237" Width="94" Tapped="a5Picture_Tapped" />
             <Image x:Name="b5Picture" Height="72" Canvas.Top="239" Width="94" Canvas.Left="99" />
-            <Image x:Name="c5Picture" Height="72" Canvas.Top="239" Width="94" Canvas.Left="198" />
+            <Image x:Name="c5Picture" Height="72" Canvas.Top="239" Width="94" Canvas.Left="198" Tapped="c5Picture_Tapped" />
             <Image x:Name="d5Picture" Height="72" Canvas.Top="237" Width="94" Canvas.Left="297" />
-            <Image x:Name="e5Picture" Height="72" Canvas.Top="239" Width="94" Canvas.Left="396" />
+            <Image x:Name="e5Picture" Height="72" Canvas.Top="239" Width="94" Canvas.Left="396" Tapped="e5Picture_Tapped" />
             <Image x:Name="f5Picture" Height="72" Canvas.Top="237" Width="94" Canvas.Left="495" />
-            <Image x:Name="g5Picture" Height="72" Canvas.Top="237" Width="94" Canvas.Left="594" />
+            <Image x:Name="g5Picture" Height="72" Canvas.Top="237" Width="94" Canvas.Left="594" Tapped="g5Picture_Tapped" />
             <Image x:Name="h5Picture" Height="72" Canvas.Top="237" Width="94" Canvas.Left="693" />
             <Image x:Name="a6Picture" Height="72" Canvas.Top="160" Width="94" />
             <Image x:Name="b6Picture" Height="72" Canvas.Top="162" Width="94" Canvas.Left="99" Tapped="b6Picture_Tapped" />
