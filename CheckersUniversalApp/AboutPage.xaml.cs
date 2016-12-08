@@ -20,26 +20,16 @@ namespace CheckersUniversalApp
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainMenu : Page
+    public sealed partial class AboutPage : Page
     {
-        public MainMenu()
+        public AboutPage()
         {
             this.InitializeComponent();
         }
 
-        private void startGameButton_Click(object sender, RoutedEventArgs e)
+        private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
-        private void settingsButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(SettingsPage));
-        }
-
-        private void aboutAppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AboutPage));
+            this.Frame.Navigate(typeof(MainMenu));
         }
     }
 }

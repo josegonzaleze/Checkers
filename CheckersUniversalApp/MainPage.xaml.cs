@@ -907,14 +907,14 @@ namespace CheckersUniversalApp
 
         }
 
-        private void newGameButton_Click(object sender, RoutedEventArgs e)
-        {
-            StartGame();
-        }
-
         private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainMenu));
+        }
+
+        private void newGameAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            StartGame();
         }
     }
 }
