@@ -131,6 +131,73 @@ namespace CheckersUniversalApp
             Image redChecker = new Image();
             redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
 
+            //DELETE ALL IMAGES:
+            a1Picture.Source = null;
+            b1Picture.Source = null;
+            c1Picture.Source = null;
+            d1Picture.Source = null;
+            e1Picture.Source = null;
+            f1Picture.Source = null;
+            g1Picture.Source = null;
+            h1Picture.Source = null;
+            a2Picture.Source = null;
+            b2Picture.Source = null;
+           
+            d2Picture.Source = null;
+       
+            f2Picture.Source = null;
+            g2Picture.Source = null;
+            h2Picture.Source = null;
+            a3Picture.Source = null;
+            b3Picture.Source = null;
+            c3Picture.Source = null;
+      
+            e3Picture.Source = null;
+            f3Picture.Source = null;
+            h3Picture.Source = null;
+            a4Picture.Source = null;
+            b4Picture.Source = null;
+            c4Picture.Source = null;
+            c4Picture.Source = null;
+            d4Picture.Source = null;
+            e4Picture.Source = null;
+            f4Picture.Source = null;
+            g4Picture.Source = null;
+            h4Picture.Source = null;
+            a5Picture.Source = null;
+            b5Picture.Source = null;
+            c5Picture.Source = null;
+            d5Picture.Source = null;
+            e5Picture.Source = null;
+            f5Picture.Source = null;
+            g5Picture.Source = null;
+            h5Picture.Source = null;
+            a6Picture.Source = null;
+            b6Picture.Source = null;
+            c6Picture.Source = null;
+            d6Picture.Source = null;
+            e6Picture.Source = null;
+            f6Picture.Source = null;
+            g6Picture.Source = null;
+            h6Picture.Source = null;
+            a7Picture.Source = null;
+            b7Picture.Source = null;
+            c7Picture.Source = null;
+            d7Picture.Source = null;
+            e7Picture.Source = null;
+            f7Picture.Source = null;
+            g7Picture.Source = null;
+            h7Picture.Source = null;
+            a8Picture.Source = null;
+            b8Picture.Source = null;
+            c8Picture.Source = null;
+            d8Picture.Source = null;
+            e8Picture.Source = null;
+            f8Picture.Source = null;
+            g8Picture.Source = null;
+            h8Picture.Source = null;
+
+
             //set up game "RED"
             a1Picture.Source = redChecker.Source;
             c1Picture.Source = redChecker.Source;
@@ -582,6 +649,12 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0,2) + "Tile";
             ChangeBackground(rectangleName);
+            //Find what tile is it BLACK or RED
+            Image img = FindName(imageName) as Image;
+            if (img != null)
+            {
+               // string test = img.Source;
+            }
             CanMOve(rectangleName);
 
         }
