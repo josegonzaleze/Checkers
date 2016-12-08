@@ -24,18 +24,8 @@ namespace CheckersUniversalApp
     /// </summary>
     public sealed partial class SettingsPage : Page
     {
-        //public class colorData1
-        //{
-        //    public Color color { get; set; }
-        //}
-
-        //public class colorData2
-        //{
-        //    public Color color { get; set; }
-        //}
-
-        public static Color color1;
-        public static Color color2;
+        public static Color color1 = Colors.Red;
+        public static Color color2 = Colors.Black;
 
         public SettingsPage()
         {
@@ -141,6 +131,11 @@ namespace CheckersUniversalApp
         }
 
         private void backButton_Tapped(object sender, BackRequestedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainMenu));
+        }
+
+        private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainMenu));
         }
