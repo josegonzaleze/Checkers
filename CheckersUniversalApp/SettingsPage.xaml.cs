@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -29,6 +32,7 @@ namespace CheckersUniversalApp
 
         public static string name1 = "Player 1";
         public static string name2 = "Player 2";
+        private string username;
 
         public SettingsPage()
         {
@@ -120,22 +124,25 @@ namespace CheckersUniversalApp
         //Back button https://www.youtube.com/watch?v=lTpfegXtEH4
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
-            var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-            currentView.BackRequested += backButton_Tapped;
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("username"))
+            {
+                string username = ApplicationData.Current.LocalSettings.Values["username"] as string;
+
+                var composite = ApplicationData.Current.LocalSettings.Values["pageState"] as ApplicationDataCompositeValue;
+                nameBox1.Text = composite["name1"] as string;
+                nameBox2.Text = composite["name2"] as string;
+
+            }
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            base.OnNavigatedFrom(e);
-            var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.BackRequested += backButton_Tapped;
-        }
+           ApplicationData.Current.LocalSettings.Values["username"] = username;
 
-        private void backButton_Tapped(object sender, BackRequestedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainMenu));
+            var composite = new ApplicationDataCompositeValue();
+            composite["name1"] = nameBox1.Text;
+            composite["name2"] = nameBox2.Text;
+            ApplicationData.Current.LocalSettings.Values["pageState"] = composite;
         }
 
         private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
