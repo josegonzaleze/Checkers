@@ -649,6 +649,12 @@ namespace CheckersUniversalApp
         }
         private string FindSender(string str)
         {
+            //Color of the table
+            Brush thisRect;
+            SolidColorBrush b;
+            string colorTemp = "";
+
+
             //up right
             string letter = "";
             if (str.Substring(0, 1) != null)
@@ -671,7 +677,13 @@ namespace CheckersUniversalApp
             Image img = FindName(ImageCode) as Image;
             Rectangle rect = FindName(RectCode) as Rectangle;
 
-            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            thisRect = rect.Fill;
+            b = thisRect as SolidColorBrush;
+            if (b != null)
+                colorTemp = b.Color.ToString();
+
+
+            if (colorTemp == new SolidColorBrush(Colors.Pink).Color.ToString())
             {
                 return img.Name.ToString();
             }
@@ -698,7 +710,13 @@ namespace CheckersUniversalApp
             img = FindName(ImageCode) as Image;
             rect = FindName(RectCode) as Rectangle;
 
-            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            thisRect = rect.Fill;
+            b = thisRect as SolidColorBrush;
+            if (b != null)
+                colorTemp = b.Color.ToString();
+
+
+            if (colorTemp == new SolidColorBrush(Colors.Pink).Color.ToString())
             {
                 return img.Name.ToString();
             }
@@ -725,7 +743,13 @@ namespace CheckersUniversalApp
             img = FindName(ImageCode) as Image;
             rect = FindName(RectCode) as Rectangle;
 
-            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            thisRect = rect.Fill;
+            b = thisRect as SolidColorBrush;
+            if (b != null)
+                colorTemp = b.Color.ToString();
+
+
+            if (colorTemp == new SolidColorBrush(Colors.Pink).Color.ToString())
             {
                 return img.Name.ToString();
             }
@@ -752,7 +776,13 @@ namespace CheckersUniversalApp
             img = FindName(ImageCode) as Image;
             rect = FindName(RectCode) as Rectangle;
 
-            if (rect.Fill == new SolidColorBrush(Colors.Pink))
+            thisRect = rect.Fill;
+            b = thisRect as SolidColorBrush;
+            if (b != null)
+                colorTemp = b.Color.ToString();
+
+
+            if (colorTemp == new SolidColorBrush(Colors.Pink).Color.ToString())
             {
                 return img.Name.ToString();
             }
