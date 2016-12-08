@@ -197,6 +197,8 @@ namespace CheckersUniversalApp
             g8Picture.Source = null;
             h8Picture.Source = null;
 
+            //RE - Paint the board
+            PaintBoardTiles();
 
             //set up game "RED"
             a1Picture.Source = redChecker.Source;
@@ -494,8 +496,9 @@ namespace CheckersUniversalApp
 
         private void Move(string str)
         {
-            string Imagecode = str.Substring(0, 2);
-            string ImageName = Imagecode + "Picture";
+            string code = str.Substring(0, 2);
+            string ImageName = code + "Picture";
+            string RectangleName = code + "Tile";
             Image img = FindName(ImageName) as Image;
             Rectangle rect = FindName(str) as Rectangle;
             
@@ -664,9 +667,19 @@ namespace CheckersUniversalApp
             return "";
         }
 
-        //Listeners ------------------
+        private bool CanTakeCoin(string str)
+        {
+            string code = str.Substring(0, 2);
+            string ImageName = code + "Picture";
+            string RectangleName = code + "Tile";
+            Rectangle rect = FindName(RectangleName) as Rectangle;
 
-            
+            return true;
+        }
+
+        //Listeners -----------------------------------------------------------
+
+
         private void a1Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
             PaintBoardTiles();
@@ -1268,6 +1281,10 @@ namespace CheckersUniversalApp
 
         }
 
+        private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainMenu));
+        }
         private void a5Picture_Tapped(object sender, TappedRoutedEventArgs e)
         {
             PaintBoardTiles();
@@ -1429,7 +1446,6 @@ namespace CheckersUniversalApp
             }
         }
 
-
         private void newGameButton_Click(object sender, RoutedEventArgs e)
         {
             StartGame();
@@ -1440,10 +1456,22 @@ namespace CheckersUniversalApp
             StartGame();
         }
 
-    private void homeAppBarButton_Click(object sender, RoutedEventArgs e)
-    {
-        this.Frame.Navigate(typeof(MainMenu));
+
+
+        //Listeners When there is no coin on the tile;
+        private void b4Tile_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            //Get names for location
+            PaintBoardTiles();
+            string imageName = ((Image)sender).Name.ToString();
+            string rectangleName = imageName.Substring(0, 2) + "Tile";
+
+            if (CanTakeCoin(rectangleName))
+            {
+
+            }
+        }
+
     }
 
-}
 }

@@ -54,7 +54,7 @@
             <Rectangle x:Name="f5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="495"/>
             <Rectangle x:Name="g5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="594"/>
             <Rectangle x:Name="h5Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="237" Canvas.Left="693"/>
-            <Rectangle x:Name="b4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="99"/>
+            <Rectangle x:Name="b4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="99" Tapped="b4Tile_Tapped"/>
             <Rectangle x:Name="c4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="198"/>
             <Rectangle x:Name="d4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="297"/>
             <Rectangle x:Name="e4Tile"  Height="74" Stroke="Black" Width="94" Canvas.Top="316" Canvas.Left="396"/>
