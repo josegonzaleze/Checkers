@@ -319,6 +319,9 @@ namespace CheckersUniversalApp
                 if (img.Source == null && img.Source == null)
                 {
                     rect.Fill = new SolidColorBrush(Colors.Gray);
+                }else
+                {
+                    DownLeftSearch(letter + number);
                 }
             }
 
@@ -358,10 +361,187 @@ namespace CheckersUniversalApp
                 {
                     rect.Fill = new SolidColorBrush(Colors.Gray);
                 }
+                else
+                {
+                    DownRightSearch(letter + number);
+                }
             }
 
         }
 
+        private void DownLeftSearch(string str)
+        {
+            Image imgToEat = FindName(str + "Picture") as Image;
+            if (imgToEat.Tag.ToString() == "red")
+            {
+                //Left Position
+                string letter = "";
+                if (str.Substring(0, 1) != null)
+                {
+                    letter = str.Substring(0, 1);
+                }
+                string number = str.Substring(1, 1);
+
+                letter = DecrementLetter(letter);
+
+                int n = (Convert.ToInt32(number) - 1);
+                if (n < 1)
+                {
+                    n = 1;
+                }
+                number = n.ToString();
+
+                string ImageCode = letter + number + "Picture";
+                string RectCode = letter + number + "Tile";
+                Image img = FindName(ImageCode) as Image;
+                Rectangle rect = FindName(RectCode) as Rectangle;
+
+                Image blackChecker = new Image();
+                blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+                Image redChecker = new Image();
+                redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+                if (img != null)
+                {
+
+                    if (img.Source == null && img.Source == null)
+                    {
+                        rect.Fill = new SolidColorBrush(Colors.Gray);
+                    }
+                }
+            }
+        }
+        private void DownRightSearch(string str)
+        {
+            Image imgToEat = FindName(str + "Picture") as Image;
+            if(imgToEat.Tag.ToString() == "red")
+            {
+                //Right Position
+                string letter = "";
+                string number = "";
+                if (str.Substring(0, 1) != null)
+                {
+                    letter = str.Substring(0, 1);
+                }
+                number = str.Substring(1, 1);
+
+                letter = IncrementLetter(letter);
+
+                int n = (Convert.ToInt32(number) - 1);
+                if (n < 1)
+                {
+                    n = 1;
+                }
+                number = n.ToString();
+
+                string ImageCode = letter + number + "Picture";
+                string RectCode = letter + number + "Tile";
+                Image img = FindName(ImageCode) as Image;
+                Rectangle rect = FindName(RectCode) as Rectangle;
+
+                Image blackChecker = new Image();
+                blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+                Image redChecker = new Image();
+                redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+                if (img != null)
+                {
+
+                    if (img.Source == null && img.Source == null)
+                    {
+                        rect.Fill = new SolidColorBrush(Colors.Gray);
+                    }
+
+                }
+            }
+            
+        }
+        private void UpLeftSearch(string str)
+        {
+            Image imgToEat = FindName(str + "Picture") as Image;
+            if (imgToEat.Tag.ToString() == "black")
+            {
+                //Left Position
+                string letter = "";
+                if (str.Substring(0, 1) != null)
+                {
+                    letter = str.Substring(0, 1);
+                }
+
+                string number = str.Substring(1, 1);
+                letter = DecrementLetter(letter);
+
+                int n = (Convert.ToInt32(number) + 1);
+                if (n < 1)
+                {
+                    n = 1;
+                }
+                number = n.ToString();
+
+                string ImageCode = letter + number + "Picture";
+                string RectCode = letter + number + "Tile";
+                Image img = FindName(ImageCode) as Image;
+                Rectangle rect = FindName(RectCode) as Rectangle;
+
+                if (img != null)
+                {
+
+                    if (img.Source == null && img.Source == null)
+                    {
+                        rect.Fill = new SolidColorBrush(Colors.Gray);
+                    }
+                }
+            }
+        }
+        private void UpRightSearch(string str)
+        {
+            Image imgToEat = FindName(str + "Picture") as Image;
+            if (imgToEat.Tag.ToString() == "black")
+            {
+                // Right position
+                string letter = "";
+                if (str.Substring(0, 1) != null)
+                {
+                    letter = str.Substring(0, 1);
+                }
+
+                string number = str.Substring(1, 1);
+
+                letter = IncrementLetter(letter);
+                int n = (Convert.ToInt32(number) + 1);
+                if (n > 8)
+                {
+                    n = 8;
+                }
+                number = n.ToString();
+
+                string ImageCode = letter + number + "Picture";
+                string RectCode = letter + number + "Tile";
+                Image img = FindName(ImageCode) as Image;
+                Rectangle rect = FindName(RectCode) as Rectangle;
+
+                Image blackChecker = new Image();
+                blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+
+                Image redChecker = new Image();
+                redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
+
+
+                if (img != null)
+                {
+
+                    if (img.Source == null && img.Source == null)
+                    {
+                        rect.Fill = new SolidColorBrush(Colors.Gray);
+                    }
+                }
+            }
+
+        }
         private void CanMOve(string str)
         {
             // Right position
@@ -399,6 +579,9 @@ namespace CheckersUniversalApp
                 if (img.Source == null && img.Source == null)
                 {
                     rect.Fill = new SolidColorBrush(Colors.Gray);
+                }else
+                {
+                    UpRightSearch(letter + number);
                 }
             }
 
@@ -430,6 +613,10 @@ namespace CheckersUniversalApp
                 if (img.Source == null && img.Source == null)
                 {
                     rect.Fill = new SolidColorBrush(Colors.Gray);
+                }
+                else
+                {
+                    UpLeftSearch(letter + number);
                 }
             }
 
@@ -829,6 +1016,7 @@ namespace CheckersUniversalApp
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0,2) + "Tile";
             ChangeBackground(rectangleName);
+
             //Find what tile is it BLACK or RED
             Image img = FindName(imageName) as Image;
 
@@ -836,10 +1024,12 @@ namespace CheckersUniversalApp
             {
                 if(img.Tag.ToString() == "red")
                 {
+                    //Send algorithm to move for reds
                     CanMOve(imageName);
                 }
                 else if(img.Tag.ToString() == "black")
                 {
+                    //Send algorithm to move for blacks
                     CanMoveTop(imageName);
                 }
             }
