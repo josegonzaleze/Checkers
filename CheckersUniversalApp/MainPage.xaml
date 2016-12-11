@@ -146,9 +146,9 @@
             <Image x:Name="f8Picture" Height="72" Width="94" Canvas.Left="495" Canvas.Top="4" Tapped="Picture_Tapped" />
             <Image x:Name="g8Picture" Height="72" Width="94" Canvas.Left="594" Canvas.Top="4" />
             <Image x:Name="h8Picture" Height="72" Width="94" Canvas.Left="693" Canvas.Top="2" Tapped="Picture_Tapped" />
+            <Image x:Name="winnerImage" Height="309" Canvas.Left="198" Canvas.Top="243" Width="396" Stretch="Fill"/>
+            <TextBlock x:Name="winnerTextBlock" TextWrapping="Wrap" Text="" Canvas.Left="198" Canvas.Top="122" Height="110" Width="391" FontFamily="Impact" FontSize="48" TextAlignment="Center" Foreground="White"/>
         </Canvas>
-        <Button x:Name="button" Content="Paint" HorizontalAlignment="Left" Margin="450,132,0,0" VerticalAlignment="Top" Height="62" Width="131" Click="button_Click" Grid.Column="1" Grid.Row="1"/>
-        <Button x:Name="button1" Content="Corcholatas!" HorizontalAlignment="Left" Margin="450,224,0,0" VerticalAlignment="Top" Height="46" Width="131" Click="button1_Click" Grid.Column="1" Grid.Row="1"/>
         <AppBarButton x:Name="homeAppBarButton" HorizontalAlignment="Left" Icon="Home" Label="Home" VerticalAlignment="Top" Margin="26,253,0,0" Grid.Row="1" Click="homeAppBarButton_Click" Height="64" Width="73" ToolTipService.ToolTip="Takes you back to the Main Menu">
             <AppBarSeparator Height="100" Width="100"/>
         </AppBarButton>

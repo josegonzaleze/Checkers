@@ -29,8 +29,18 @@ namespace CheckersUniversalApp
     {
         public Color color1 = SettingsPage.color1;
         public Color color2 = SettingsPage.color2;
-        
-        
+
+        public bool eatUpRight = false;
+        public bool eatUpLeft = false;
+        public bool eatDownRight = false;
+        public bool eatDownLeft = false;
+        public bool eat = false;
+        public string eatCode = "";
+        public bool turnRed = true;
+        public bool turnBlack = false;
+        private bool redWin = false;
+        private bool blackWin = false;
+
         public MainPage()
         {
             InitializeComponent();
@@ -132,6 +142,13 @@ namespace CheckersUniversalApp
             redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
             Image blackChecker = new Image();
             blackChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackChecker.png"));
+            winnerImage.Source = null;
+            winnerTextBlock.IsHitTestVisible = false;
+            winnerTextBlock.Text = "";
+            turnBlack = false;
+            turnRed = true;
+            redWin = false;
+            blackWin = false;
 
             //DELETE ALL IMAGES:
             a1Picture.Source = null;
@@ -409,6 +426,7 @@ namespace CheckersUniversalApp
                     if (img.Source == null && img.Source == null)
                     {
                         rect.Fill = new SolidColorBrush(Colors.Gray);
+                        eatDownLeft = true;
                     }
                 }
             }
@@ -454,6 +472,7 @@ namespace CheckersUniversalApp
                     if (img.Source == null && img.Source == null)
                     {
                         rect.Fill = new SolidColorBrush(Colors.Gray);
+                        eatDownRight = true;
                     }
 
                 }
@@ -493,12 +512,13 @@ namespace CheckersUniversalApp
                     if (img.Source == null && img.Source == null)
                     {
                         rect.Fill = new SolidColorBrush(Colors.Gray);
+                        eatUpLeft = true;
                     }
                 }
             }
         }
         private void UpRightSearch(string str)
-        {
+        {   
             Image imgToEat = FindName(str + "Picture") as Image;
             if (imgToEat.Tag.ToString() == "black")
             {
@@ -537,6 +557,7 @@ namespace CheckersUniversalApp
                     if (img.Source == null && img.Source == null)
                     {
                         rect.Fill = new SolidColorBrush(Colors.Gray);
+                        eatUpRight = true;
                     }
                 }
             }
@@ -1003,15 +1024,243 @@ namespace CheckersUniversalApp
                     return img.Name.ToString();
                 }
             }
-            return "";
+            //At This point none of the 4th points 
+            //We need to go deeper. maybe this is a EAT move, Eat fuction will give us the name of the sender by going one more level
 
+            return Eat(str);
+
+        }
+        private string Eat(string str)
+        {
+            string number = str.Substring(1, 1);
+            string letter = str.Substring(0, 1);
+
+            string senderLetter = "";
+            int senderNumber = 0;
+            Rectangle temp;
+
+            //When DownLeft and DownRight are true;
+            if (eatDownLeft && eatDownRight)
+            {
+                // Move 4 to the right
+
+                string letter4R2 = IncrementLetter(letter);
+                letter4R2 = IncrementLetter(letter4R2);
+                letter4R2 = IncrementLetter(letter4R2);
+                letter4R2 = IncrementLetter(letter4R2);
+                string number4R2 = number;
+
+                temp = FindName(letter4R2 + number4R2 + "Tile") as Rectangle;
+
+                //Gets the string of the fill in the rectangle
+                if (temp != null)
+                {
+                    Brush thisRect = temp.Fill;
+                    SolidColorBrush b = thisRect as SolidColorBrush;
+                    string colorTemp = "";
+                    if (b != null)
+                        colorTemp = b.Color.ToString();
+                    // Gray is allowed color
+                    string allowedColor = "#FF808080";
+
+                    //Check if is this is gray if so, we are moving to the left
+                    if (allowedColor == colorTemp)
+                    {
+                        eatDownRight = false;
+                    }
+                }
+
+                //Move 4 to the left
+                string letter4L2 = DecrementLetter(letter);
+                letter4L2 = DecrementLetter(letter4L2);
+                letter4L2 = DecrementLetter(letter4L2);
+                letter4L2 = DecrementLetter(letter4L2);
+                string number4L2 = number;
+
+                temp = FindName(letter4L2 + number4L2 + "Tile") as Rectangle;
+                if (temp != null)
+                {
+                    Brush thisRect = temp.Fill;
+                    SolidColorBrush b = thisRect as SolidColorBrush;
+                    string colorTemp = "";
+                    if (b != null)
+                        colorTemp = b.Color.ToString();
+                    // Gray is allowed color
+                    string allowedColor = "#FF808080";
+
+                    //Check if this is gray if so, we are movinf to the right
+                    if (allowedColor == colorTemp)
+                    {
+                        eatDownLeft = false;
+
+                    }
+                }
+                //At this point only one bool must be true;
+            }
+
+
+            //When Upleft and Upright are true
+            if (eatUpLeft && eatUpRight)
+            {
+                // Move 4 to the right
+
+                string letter4R = IncrementLetter(letter);
+                letter4R = IncrementLetter(letter4R);
+                letter4R = IncrementLetter(letter4R);
+                letter4R = IncrementLetter(letter4R);
+                string number4R = number;
+                temp = FindName(letter4R + number4R + "Tile") as Rectangle;
+
+                if (temp != null)
+                {
+                    Brush thisRect = temp.Fill;
+                    SolidColorBrush b = thisRect as SolidColorBrush;
+                    string colorTemp = "";
+                    if (b != null)
+                        colorTemp = b.Color.ToString();
+                    // Gray is allowed color
+                    string allowedColor = "#FF808080";
+
+                    //Check if is this is gray if so, we are moving to the left
+                    if (allowedColor == colorTemp)
+                    {
+                        eatUpRight = false;
+                    }
+                }
+                    
+
+                    //Move 4 to the left
+                    string letter4L2 = DecrementLetter(letter);
+                    letter4L2 = DecrementLetter(letter4L2);
+                    letter4L2 = DecrementLetter(letter4L2);
+                    letter4L2 = DecrementLetter(letter4L2);
+                    string number4L2 = number;
+                    temp = FindName(letter4L2 + number4L2 + "Tile") as Rectangle;
+
+                    if (temp != null)
+                    {
+                        Brush thisRect = temp.Fill;
+                        SolidColorBrush b = thisRect as SolidColorBrush;
+                        string colorTemp = "";
+                        if (b != null)
+                            colorTemp = b.Color.ToString();
+                        // Gray is allowed color
+                        string allowedColor = "#FF808080";
+
+                        //Check if is this is gray if so, we are moving to the right
+                        if (allowedColor == colorTemp)
+                        {
+                            eatUpLeft = false;
+                        }
+                    }
+                    //At this point only one bool must be true
+                
+            }
+
+
+            if (eatDownLeft)
+            {
+                //
+                senderLetter = "";
+                senderNumber = 0;
+                //Sender is letter + 2 number + 2
+                senderLetter = IncrementLetter(letter);
+                senderNumber = Convert.ToInt32(number) + 1;
+                if (senderNumber > 8)
+                {
+                    senderNumber = 8;
+                }
+                eatCode = senderLetter + senderNumber + "Picture";
+                
+                senderLetter = IncrementLetter(senderLetter);
+                senderNumber = senderNumber + 1;
+                if( senderNumber > 8)
+                {
+                    senderNumber = 8;
+                }
+                eat = true;
+
+
+            }
+           else if (eatDownRight)
+            {
+                senderLetter = "";
+                senderNumber = 0;
+                //Sender is letter - 2 number + 2
+                senderLetter = DecrementLetter(letter);
+                senderNumber = Convert.ToInt32(number) + 1;
+                if (senderNumber > 8)
+                {
+                    senderNumber = 8;
+                }
+                eatCode = senderLetter + senderNumber + "Picture";
+
+                senderLetter = DecrementLetter(senderLetter);
+                senderNumber = senderNumber + 1;
+                if (senderNumber > 8)
+                {
+                    senderNumber = 8;
+                }
+               
+                eat = true;
+            }
+
+           else if (eatUpLeft)
+            {
+                senderLetter = "";
+                senderNumber = 0;
+                //Sender is  letter + 2 number - 2
+                senderLetter = IncrementLetter(letter);
+                senderNumber = Convert.ToInt32(number) - 1;
+                if (senderNumber < 1)
+                {
+                    senderNumber = 1;
+                }
+                eatCode = senderLetter + senderNumber + "Picture";
+
+                senderLetter = IncrementLetter(senderLetter);
+                senderNumber = senderNumber - 1;
+                if (senderNumber < 1)
+                {
+                    senderNumber = 1;
+                }
+                
+                eat = true;
+            }
+            else if (eatUpRight)
+            {
+                senderLetter = "";
+                senderNumber = 0;
+                //Sender is letter - 2 number - 2
+                senderLetter = DecrementLetter(letter);
+                senderNumber = Convert.ToInt32(number) - 1;
+                if (senderNumber < 1)
+                {
+                    senderNumber = 1;
+                }
+                eatCode = senderLetter + senderNumber + "Picture";
+
+                senderLetter = DecrementLetter(senderLetter);
+                senderNumber = senderNumber - 1;
+                if (senderNumber < 1)
+                {
+                    senderNumber = 1;
+                }
+                
+                eat = true;
+            }
+            eatDownLeft = false;
+            eatDownRight = false;
+            eatUpLeft = false;
+            eatUpRight = false;
+            return (senderLetter + senderNumber + "Picture");
         }
 
         //Listeners -----------------------------------------------------------
 
 
         private void Picture_Tapped(object sender, TappedRoutedEventArgs e)
-        {
+        {            
             PaintBoardTiles();
             string imageName = ((Image)sender).Name.ToString();
             string rectangleName = imageName.Substring(0,2) + "Tile";
@@ -1022,12 +1271,12 @@ namespace CheckersUniversalApp
 
             if (img != null)
             {
-                if(img.Tag.ToString() == "red")
+                if(img.Tag.ToString() == "red" && turnRed)
                 {
                     //Send algorithm to move for reds
                     CanMOve(imageName);
                 }
-                else if(img.Tag.ToString() == "black")
+                else if(img.Tag.ToString() == "black" && turnBlack)
                 {
                     //Send algorithm to move for blacks
                     CanMoveTop(imageName);
@@ -1065,26 +1314,137 @@ namespace CheckersUniversalApp
             string imageName = rectangleName.Substring(0, 2) + "Picture";
             Image img = FindName(imageName) as Image;
 
-            if (CanTakeCoin(rectangleName))
-            {
-                string NameOfSender = FindSender(rectangleName);
-                Image imgSender = FindName(NameOfSender) as Image;
-                if(imgSender.Tag.ToString() == "red")
+                if (CanTakeCoin(rectangleName))
                 {
-                    img.Source = redChecker.Source;
-                    img.Tag = "red";
-                }
-                else if (imgSender.Tag.ToString() == "black")
+                    string NameOfSender = FindSender(rectangleName);
+                    Image imgSender = FindName(NameOfSender) as Image;
+                    if (imgSender.Tag.ToString() == "red")
+                    {
+                        img.Source = redChecker.Source;
+                        img.Tag = "red";
+                    }
+                    else if (imgSender.Tag.ToString() == "black")
+                    {
+                        img.Source = blackChecker.Source;
+                        img.Tag = "black";
+                    }
+                    //Ending move
+                    imgSender.Source = null;
+                    imgSender.Tag = null;
+                    if (eat)
+                    {
+                        Image delImage = FindName(eatCode) as Image;
+                        delImage.Source = null;
+                        delImage.Tag = null;
+                        eat = false;
+                    }
+                    PaintBoardTiles();
+                if (turnRed)
                 {
-                    img.Source = blackChecker.Source;
-                    img.Tag = "black";
+                    turnRed = false;
+                    turnBlack = true;
+
                 }
-                //Ending move
-                imgSender.Source = null;
-                imgSender.Tag = null;
-                PaintBoardTiles();
+                else
+                {
+                    turnBlack = false;
+                    turnRed = true;
+                }
+
+               
             }
-           
+            CheckWin();
+             
+        }
+
+        private void CheckWin()
+        {
+            //If there is one red image on the top of the board, red will be the winer.
+            
+            if(a8Picture.Tag != null)
+            {
+                if(a8Picture.Tag.ToString() == "red")
+                redWin = true;
+            }
+            if(b8Picture.Tag != null && b8Picture.Tag.ToString() == "red")
+            {
+                redWin = true;
+            }
+            if (c8Picture.Tag != null && c8Picture.Tag.ToString() == "red")
+            {
+                redWin = true;
+            }
+            if (d8Picture.Tag != null && d8Picture.Tag.ToString() == "red")
+            {
+                redWin = true;
+            }
+            if (e8Picture.Tag != null && e8Picture.Tag.ToString() == "red")
+            {
+                redWin = true;
+            }
+            if (f8Picture.Tag != null && f8Picture.Tag.ToString() == "red")
+            {
+                redWin = true;
+            }
+            if (g8Picture.Tag != null && g8Picture.Tag.ToString() == "red")
+            {
+                redWin = true;
+            }
+            if (h8Picture.Tag != null && h8Picture.Tag.ToString() == "red")
+            {
+                redWin = true;
+            }
+
+
+            //If there is one black image on the buttom of the board, black will be the winer.
+            if(a1Picture.Tag != null && a1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+            if (b1Picture.Tag != null && b1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+            if (c1Picture.Tag != null && c1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+            if (d1Picture.Tag != null && d1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+            if (e1Picture.Tag != null && e1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+            if (f1Picture.Tag != null && f1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+            if (g1Picture.Tag != null && g1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+            if (h1Picture.Tag != null && h1Picture.Tag.ToString() == "black")
+            {
+                blackWin = true;
+            }
+
+            if(redWin)
+            {
+                winnerImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/checker.png"));
+                winnerTextBlock.Text = playerName1.Text.ToString() + " WINS!!!";
+                turnRed = false;
+                turnBlack = false;
+            }
+
+            if(blackWin)
+            {
+                winnerImage.Source = new BitmapImage(new Uri("ms-appx:///Assets/blackPlayerChecker.png"));
+                winnerTextBlock.Text = playerName2.Text.ToString() + " WINS!!!";
+                turnRed = false;
+                turnBlack = false;
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
