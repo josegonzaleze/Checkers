@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
@@ -29,6 +30,7 @@ namespace CheckersUniversalApp
     {
         public Color color1 = SettingsPage.color1;
         public Color color2 = SettingsPage.color2;
+        
 
         public bool eatUpRight = false;
         public bool eatUpLeft = false;
@@ -40,6 +42,7 @@ namespace CheckersUniversalApp
         public bool turnBlack = false;
         private bool redWin = false;
         private bool blackWin = false;
+        public string Turn = "red";
 
         public MainPage()
         {
@@ -138,6 +141,7 @@ namespace CheckersUniversalApp
 
         public void StartGame()
         {
+          
             Image redChecker = new Image();
             redChecker.Source = new BitmapImage(new Uri("ms-appx:///Assets/redChecker.png"));
             Image blackChecker = new Image();
@@ -1455,9 +1459,64 @@ namespace CheckersUniversalApp
             currentView.BackRequested += backButton_Tapped;
 
             PaintBoardTiles();
-            StartGame();
+            //StartGame();
             playerName1.Text = SettingsPage.name1;
             playerName2.Text = SettingsPage.name2;
+
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("p1"))
+            {
+                playerName1.Text = ApplicationData.Current.LocalSettings.Values["p1"] as string;
+            }
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("p2"))
+            {
+                playerName1.Text = ApplicationData.Current.LocalSettings.Values["p2"] as string;
+            }
+
+            
+        
+
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("c2"))
+            {
+                string colorOfTheTile = ApplicationData.Current.LocalSettings.Values["c2"] as string;
+
+                if (colorOfTheTile == "Red")
+                {
+                    color2 = Colors.Red;
+                    SettingsPage.colorTile2 = "Red";
+                    SettingsPage.color2 = Colors.Red;
+                }
+                else if (colorOfTheTile == "Blue")
+                {
+                    color2 = Colors.Blue;
+                    SettingsPage.colorTile2 = "Blue";
+                    SettingsPage.color2 = Colors.Blue;
+                }
+                else if (colorOfTheTile == "Yellow")
+                {
+                    color1 = Colors.Yellow;
+                    SettingsPage.colorTile2 = "Yellow";
+                    SettingsPage.color2 = Colors.Yellow;
+                }
+                else if (colorOfTheTile == "Green")
+                {
+                    color2 = Colors.Green;
+                    SettingsPage.colorTile2 = "Green";
+                    SettingsPage.color2 = Colors.Green;
+                }
+                else if (colorOfTheTile == "Purple")
+                {
+                    color2 = Colors.Purple;
+                    SettingsPage.colorTile2 = "Purple";
+                    SettingsPage.color2 = Colors.Purple;
+                }
+                else if (colorOfTheTile == "Black")
+                {
+                    color1 = Colors.Black;
+                    SettingsPage.colorTile2 = "Black";
+                    SettingsPage.color2 = Colors.Black;
+                }
+            }
+
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -1465,6 +1524,9 @@ namespace CheckersUniversalApp
             base.OnNavigatedFrom(e);
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.BackRequested += backButton_Tapped;
+            ApplicationData.Current.LocalSettings.Values["p1"] = playerName1.Text.ToString();
+            ApplicationData.Current.LocalSettings.Values["p2"] = playerName2.Text.ToString();
+
         }
 
         private void backButton_Tapped(object sender, BackRequestedEventArgs e)

@@ -29,6 +29,8 @@ namespace CheckersUniversalApp
     {
         public static Color color1 = Colors.Red;
         public static Color color2 = Colors.Black;
+        public static string colorTile1 = "Red";
+        public static string colorTile2 = "Black";
 
         public static string name1 = "Player 1";
         public static string name2 = "Player 2";
@@ -44,6 +46,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Red);
             colorTest.Fill = brush;
             color1 = Colors.Red;
+            colorTile1 = "Red";
         }
 
         private void blueRB1_Checked(object sender, RoutedEventArgs e)
@@ -51,24 +54,28 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Blue);
             colorTest.Fill = brush;
             color1 = Colors.Blue;
+            colorTile1 = "Blue";
         }
         private void greenRB1_Checked(object sender, RoutedEventArgs e)
         {
             SolidColorBrush brush = new SolidColorBrush(Colors.Green);
             colorTest.Fill = brush;
             color1 = Colors.Green;
+            colorTile1 = "Green";
         }
         private void yellowRB1_Checked(object sender, RoutedEventArgs e)
         {
             SolidColorBrush brush = new SolidColorBrush(Colors.Yellow);
             colorTest.Fill = brush;
             color1 = Colors.Yellow;
+            colorTile1 = "Yellow";
         }
         private void purpleRB1_Checked(object sender, RoutedEventArgs e)
         {
             SolidColorBrush brush = new SolidColorBrush(Colors.Purple);
             colorTest.Fill = brush;
             color1 = Colors.Purple;
+            colorTile1 = "Purple";
         }
 
         private void redRB2_Checked(object sender, RoutedEventArgs e)
@@ -76,6 +83,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Red);
             colorTest2.Fill = brush;
             color2 = Colors.Red;
+            colorTile2 = "Red";
         }
 
         private void blueRB2_Checked(object sender, RoutedEventArgs e)
@@ -83,6 +91,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Blue);
             colorTest2.Fill = brush;
             color2 = Colors.Blue;
+            colorTile2 = "Blue";
         }
 
         private void greenRB2_Checked(object sender, RoutedEventArgs e)
@@ -90,6 +99,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Green);
             colorTest2.Fill = brush;
             color2 = Colors.Green;
+            colorTile2 = "Green";
         }
 
         private void yellowRB2_Checked(object sender, RoutedEventArgs e)
@@ -97,6 +107,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Yellow);
             colorTest2.Fill = brush;
             color2 = Colors.Yellow;
+            colorTile2 = "Yellow";
         }
 
         private void purpleRB2_Checked(object sender, RoutedEventArgs e)
@@ -104,6 +115,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Purple);
             colorTest2.Fill = brush;
             color2 = Colors.Purple;
+            colorTile2 = "Purple";
         }
 
         private void blackRB1_Checked(object sender, RoutedEventArgs e)
@@ -111,6 +123,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Black);
             colorTest.Fill = brush;
             color1 = Colors.Black;
+            colorTile1 = "Black";
         }
 
         private void blackRB2_Checked(object sender, RoutedEventArgs e)
@@ -118,6 +131,7 @@ namespace CheckersUniversalApp
             SolidColorBrush brush = new SolidColorBrush(Colors.Black);
             colorTest2.Fill = brush;
             color2 = Colors.Black;
+            colorTile2 = "Black";
         }
 
 
